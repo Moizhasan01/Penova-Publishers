@@ -1,0 +1,726 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+/*
+ * Penova Publishers design system.
+ * Navy / gold / cream / brown editorial palette.
+ */
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+  --radius-3xl: calc(var(--radius) + 12px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-ring-offset-background: var(--background);
+
+  --color-navy: var(--navy);
+  --color-navy-deep: var(--navy-deep);
+  --color-navy-soft: var(--navy-soft);
+  --color-gold: var(--gold);
+  --color-gold-light: var(--gold-light);
+  --color-cream: var(--cream);
+  --color-cream-deep: var(--cream-deep);
+  --color-brown: var(--brown);
+  --color-on-navy: var(--on-navy);
+  --color-on-navy-muted: var(--on-navy-muted);
+
+  --font-serif: "Cormorant Garamond", Georgia, serif;
+  --font-sans: "Manrope", ui-sans-serif, system-ui, sans-serif;
+
+  --shadow-lift: 0 18px 45px -22px color-mix(in oklab, var(--navy-deep) 55%, transparent);
+  --shadow-glow: 0 22px 60px -24px color-mix(in oklab, var(--gold) 55%, transparent);
+}
+
+:root {
+  --radius: 0.375rem;
+
+  --navy-deep: oklch(0.2 0.045 258);
+  --navy: oklch(0.26 0.05 258);
+  --navy-soft: oklch(0.33 0.045 258);
+  --gold: oklch(0.76 0.115 82);
+  --gold-light: oklch(0.85 0.12 87);
+  --cream: oklch(0.975 0.014 85);
+  --cream-deep: oklch(0.945 0.02 85);
+  --brown: oklch(0.44 0.06 55);
+  --on-navy: oklch(0.97 0.012 85);
+  --on-navy-muted: oklch(0.82 0.018 85);
+
+  --background: var(--cream);
+  --foreground: var(--navy-deep);
+  --card: oklch(1 0.006 85);
+  --card-foreground: var(--navy-deep);
+  --popover: oklch(1 0.006 85);
+  --popover-foreground: var(--navy-deep);
+  --primary: var(--navy-deep);
+  --primary-foreground: var(--on-navy);
+  --secondary: var(--cream-deep);
+  --secondary-foreground: var(--navy-deep);
+  --muted: var(--cream-deep);
+  --muted-foreground: oklch(0.5 0.025 258);
+  --accent: var(--gold);
+  --accent-foreground: var(--navy-deep);
+  --destructive: oklch(0.55 0.2 27);
+  --destructive-foreground: oklch(0.98 0.01 85);
+  --border: oklch(0.9 0.02 85);
+  --input: oklch(0.88 0.02 85);
+  --ring: var(--gold);
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    line-height: 1.7;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-serif);
+    font-weight: 600;
+    line-height: 1.12;
+    letter-spacing: -0.01em;
+  }
+
+  ::selection {
+    background: var(--gold);
+    color: var(--navy-deep);
+  }
+}
+
+@utility eyebrow {
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--brown);
+}
+
+@utility eyebrow-on-navy {
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+
+@utility rule-gold {
+  display: block;
+  width: 4.5rem;
+  height: 2px;
+  background: linear-gradient(
+    90deg,
+    var(--gold) 0%,
+    color-mix(in oklab, var(--gold) 25%, transparent) 100%
+  );
+}
+
+@utility surface-navy {
+  background:
+    radial-gradient(
+      120% 90% at 80% 0%,
+      color-mix(in oklab, var(--gold) 14%, transparent) 0%,
+      transparent 60%
+    ),
+    linear-gradient(180deg, var(--navy) 0%, var(--navy-deep) 100%);
+  color: var(--on-navy);
+}
+
+@utility sunburst {
+  background-image: repeating-conic-gradient(
+    from 0deg at 50% 100%,
+    color-mix(in oklab, var(--gold) 22%, transparent) 0deg 2deg,
+    transparent 2deg 9deg
+  );
+}
+
+@utility card-lift {
+  transition:
+    transform 400ms cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 400ms cubic-bezier(0.22, 1, 0.36, 1),
+    border-color 400ms ease;
+  &:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-glow);
+    border-color: color-mix(in oklab, var(--gold) 60%, transparent);
+  }
+}
+
+.service-icon-flip {
+  transform-style: preserve-3d;
+  will-change: transform;
+}
+
+.group:hover .service-icon-flip,
+.group:focus-visible .service-icon-flip {
+  animation: penova-service-flip 760ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@keyframes penova-service-flip {
+  0% {
+    transform: translateY(0) rotateY(0deg);
+  }
+  45% {
+    transform: translateY(-3px) rotateY(175deg);
+  }
+  100% {
+    transform: translateY(0) rotateY(360deg);
+  }
+}
+
+@utility marquee-track {
+  animation: penova-marquee 38s linear infinite;
+}
+
+@keyframes penova-marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+/* ---------- Homepage motion & premium surfaces ---------- */
+
+@utility text-gold-shimmer {
+  background: linear-gradient(
+    100deg,
+    var(--gold) 0%,
+    var(--gold-light) 35%,
+    color-mix(in oklab, var(--gold) 70%, white) 50%,
+    var(--gold-light) 65%,
+    var(--gold) 100%
+  );
+  background-size: 220% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: penova-shimmer 7s ease-in-out infinite;
+}
+
+@keyframes penova-shimmer {
+  0%,
+  100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+@utility ken-burns {
+  animation: penova-kenburns 24s ease-in-out infinite alternate;
+}
+
+@keyframes penova-kenburns {
+  from {
+    transform: scale(1.04) translate3d(0, 0, 0);
+  }
+  to {
+    transform: scale(1.14) translate3d(-1.5%, -1.5%, 0);
+  }
+}
+
+@utility float-slow {
+  animation: penova-float 9s ease-in-out infinite;
+}
+
+@keyframes penova-float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@utility beam-sweep {
+  position: relative;
+  overflow: hidden;
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      105deg,
+      transparent 35%,
+      color-mix(in oklab, var(--gold) 22%, transparent) 50%,
+      transparent 65%
+    );
+    transform: translateX(-120%);
+    transition: transform 900ms cubic-bezier(0.22, 1, 0.36, 1);
+    pointer-events: none;
+  }
+  &:hover::after {
+    transform: translateX(120%);
+  }
+}
+
+@utility glass-navy {
+  background: color-mix(in oklab, var(--on-navy) 7%, transparent);
+  border: 1px solid color-mix(in oklab, var(--on-navy) 14%, transparent);
+  backdrop-filter: blur(14px);
+}
+
+@utility hairline-grid {
+  background-image:
+    linear-gradient(color-mix(in oklab, var(--on-navy) 6%, transparent) 1px, transparent 1px),
+    linear-gradient(90deg, color-mix(in oklab, var(--on-navy) 6%, transparent) 1px, transparent 1px);
+  background-size: 88px 88px;
+}
+
+@utility pulse-ring {
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 9999px;
+    border: 1px solid color-mix(in oklab, var(--gold) 70%, transparent);
+    animation: penova-pulse 2.8s ease-out infinite;
+  }
+}
+
+@keyframes penova-pulse {
+  0% {
+    transform: scale(1);
+    opacity: 0.9;
+  }
+  100% {
+    transform: scale(1.7);
+    opacity: 0;
+  }
+}
+
+@utility underline-sweep {
+  background-image: linear-gradient(var(--gold), var(--gold));
+  background-repeat: no-repeat;
+  background-position: 0 100%;
+  background-size: 0% 2px;
+  transition: background-size 420ms cubic-bezier(0.22, 1, 0.36, 1);
+  &:hover {
+    background-size: 100% 2px;
+  }
+}
+
+/* ============ Enhanced Animations ============ */
+
+@utility glow-pulse {
+  animation: penova-glow-pulse 3.5s ease-in-out infinite;
+}
+
+@keyframes penova-glow-pulse {
+  0%, 100% {
+    box-shadow: 0 0 15px rgba(212, 175, 55, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 35px rgba(212, 175, 55, 0.6);
+  }
+}
+
+@utility float-rise {
+  animation: penova-float-rise 6s ease-in-out infinite;
+}
+
+@keyframes penova-float-rise {
+  0%, 100% {
+    transform: translateY(0) rotateZ(-0.5deg);
+  }
+  50% {
+    transform: translateY(-12px) rotateZ(0.5deg);
+  }
+}
+
+@utility tilt-hover {
+  transition: transform 500ms cubic-bezier(0.23, 1, 0.320, 1);
+  &:hover {
+    transform: perspective(800px) rotateX(5deg) rotateY(-5deg) scale(1.02);
+  }
+}
+
+@utility icon-bounce {
+  animation: penova-icon-bounce 2.2s ease-in-out infinite;
+}
+
+@keyframes penova-icon-bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  25% {
+    transform: translateY(-3px);
+  }
+  50% {
+    transform: translateY(0);
+  }
+  75% {
+    transform: translateY(-1px);
+  }
+}
+
+@utility slide-in-left {
+  animation: penova-slide-in-left 800ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@keyframes penova-slide-in-left {
+  from {
+    opacity: 0;
+    transform: translateX(-40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@utility slide-in-right {
+  animation: penova-slide-in-right 800ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@keyframes penova-slide-in-right {
+  from {
+    opacity: 0;
+    transform: translateX(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@utility fade-in-up {
+  animation: penova-fade-in-up 700ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@keyframes penova-fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@utility spin-slow {
+  animation: spin 20s linear infinite;
+}
+
+@utility gradient-shift {
+  background-size: 200% 200%;
+  animation: penova-gradient-shift 8s ease infinite;
+}
+
+@keyframes penova-gradient-shift {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+@utility text-glow {
+  text-shadow: 0 0 20px rgba(212, 175, 55, 0.4);
+  animation: penova-text-glow 3s ease-in-out infinite;
+}
+
+@keyframes penova-text-glow {
+  0%, 100% {
+    text-shadow: 0 0 20px rgba(212, 175, 55, 0.4);
+  }
+  50% {
+    text-shadow: 0 0 40px rgba(212, 175, 55, 0.7);
+  }
+}
+
+@utility smooth-scale-in {
+  animation: penova-smooth-scale-in 600ms cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+@keyframes penova-smooth-scale-in {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@utility hover-lift {
+  transition: transform 300ms cubic-bezier(0.22, 1, 0.36, 1), box-shadow 300ms ease;
+  &:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 20px 45px rgba(212, 175, 55, 0.15);
+  }
+}
+
+@utility writing-mode-vertical {
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  transform: rotate(180deg);
+}
+
+/* ============ Publishing Hero Animations ============ */
+
+@utility typing-animation {
+  display: inline-block;
+  overflow: hidden;
+  white-space: nowrap;
+  border-right: 2px solid var(--gold);
+  animation: penova-typing 3.5s steps(40, end) forwards, penova-blink 0.7s infinite;
+}
+
+@keyframes penova-typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes penova-blink {
+  0%, 49% {
+    border-right-color: var(--gold);
+  }
+  50%, 100% {
+    border-right-color: transparent;
+  }
+}
+
+@utility word-reveal {
+  display: inline-block;
+  animation: penova-word-reveal 800ms ease-out forwards;
+}
+
+@keyframes penova-word-reveal {
+  0% {
+    opacity: 0;
+    transform: translateY(20px) scaleY(0.8);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scaleY(1);
+  }
+}
+
+@utility page-flip {
+  animation: penova-page-flip 2s ease-in-out infinite;
+}
+
+@keyframes penova-page-flip {
+  0% {
+    transform: rotateY(0deg) translateZ(0);
+  }
+  50% {
+    transform: rotateY(180deg) translateZ(0);
+  }
+  100% {
+    transform: rotateY(0deg) translateZ(0);
+  }
+}
+
+@utility pen-stroke {
+  animation: penova-pen-stroke 2.2s ease-in-out infinite;
+}
+
+@keyframes penova-pen-stroke {
+  0%, 100% {
+    transform: translateX(-30px) translateY(0);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(30px) translateY(0);
+    opacity: 0;
+  }
+}
+
+@utility book-emerge {
+  animation: penova-book-emerge 1.4s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
+@keyframes penova-book-emerge {
+  0% {
+    opacity: 0;
+    transform: translateY(40px) scale(0.8) rotateX(80deg);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1) rotateX(0);
+  }
+}
+
+@utility letters-scatter {
+  animation: penova-letters-scatter 3s ease-out forwards;
+}
+
+@keyframes penova-letters-scatter {
+  0% {
+    opacity: 0;
+    transform: translate(0, 0) rotate(0deg);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(var(--tx, 0), var(--ty, 0)) rotate(var(--rotation, 0deg));
+  }
+}
+
+@utility ink-flow {
+  animation: penova-ink-flow 3.5s ease-in-out infinite;
+}
+
+@keyframes penova-ink-flow {
+  0%, 100% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  50% {
+    opacity: 0.6;
+    transform: translateY(20px);
+  }
+}
+
+@utility float-orbit {
+  animation: penova-float-orbit 8s ease-in-out infinite;
+}
+
+@keyframes penova-float-orbit {
+  0%, 100% {
+    transform: translateX(0) translateY(0);
+  }
+  25% {
+    transform: translateX(20px) translateY(-15px);
+  }
+  50% {
+    transform: translateX(0) translateY(-25px);
+  }
+  75% {
+    transform: translateX(-20px) translateY(-15px);
+  }
+}
+
+@utility pulse-glow-soft {
+  animation: penova-pulse-glow-soft 4s ease-in-out infinite;
+}
+
+@keyframes penova-pulse-glow-soft {
+  0%, 100% {
+    opacity: 0.4;
+    filter: drop-shadow(0 0 8px rgba(212, 175, 55, 0.2));
+  }
+  50% {
+    opacity: 1;
+    filter: drop-shadow(0 0 20px rgba(212, 175, 55, 0.5));
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ken-burns,
+  .float-slow,
+  .float-rise,
+  .marquee-track,
+  .text-gold-shimmer,
+  .glow-pulse,
+  .icon-bounce,
+  .slide-in-left,
+  .slide-in-right,
+  .fade-in-up,
+  .gradient-shift,
+  .text-glow,
+  .smooth-scale-in,
+  .tilt-hover,
+  .hover-lift,
+  .service-icon-flip {
+    animation: none !important;
+    transform: none !important;
+  }
+}
+
+/* ---------- Publishing hero text animations ---------- */
+
+@keyframes hero-fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(22px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes hero-slide-right {
+  from {
+    opacity: 0;
+    transform: translateX(-18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes hero-word-in {
+  from {
+    opacity: 0;
+    transform: translateY(14px) skewY(2deg);
+    filter: blur(4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) skewY(0deg);
+    filter: blur(0);
+  }
+}
+
+@keyframes hero-cursor-blink {
+  0%, 100% { border-right-color: var(--gold); }
+  50%       { border-right-color: transparent; }
+}
