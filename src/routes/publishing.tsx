@@ -26,7 +26,7 @@ import { HeroForm } from "@/components/home/hero-form";
 import { PublishingForm } from "@/components/forms/publishing-form";
 import { cn } from "@/lib/utils";
 import publishingBanner from "@/assets/publishing banner.jpg";
-import penovaMockup from "@/assets/penove mockup.png";
+import penovaMockup from "@/assets/pub mockup.png";
 import publishingProcessImg from "@/assets/publishing-process.jpg";
 import publishingDistributionImg from "@/assets/publishing-distribution.jpg";
 import publishingCoverImg from "@/assets/publishing-cover.jpg";
