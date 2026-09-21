@@ -7,11 +7,31 @@ import { SERVICES } from "@/lib/site-data";
 import { toast } from "sonner";
 
 const socials = [
-  { label: "Facebook", Icon: FaFacebookF },
-  { label: "Instagram", Icon: FaInstagram },
-  { label: "LinkedIn", Icon: FaLinkedinIn },
-  { label: "Pinterest", Icon: FaPinterestP },
-  { label: "TikTok", Icon: FaTiktok },
+  {
+    label: "Facebook",
+    href: "https://www.facebook.com/Penovapublishers/",
+    Icon: FaFacebookF,
+  },
+  {
+    label: "Instagram",
+    href: "https://www.instagram.com/",
+    Icon: FaInstagram,
+  },
+  {
+    label: "LinkedIn",
+    href: "https://www.linkedin.com/company/penovapublishers/",
+    Icon: FaLinkedinIn,
+  },
+  {
+    label: "Pinterest",
+    href: "https://pin.it/3FGiGAFKg",
+    Icon: FaPinterestP,
+  },
+  {
+    label: "TikTok",
+    href: "https://www.tiktok.com/",
+    Icon: FaTiktok,
+  },
 ];
 
 export function SiteFooter() {
@@ -26,10 +46,12 @@ export function SiteFooter() {
               who intend to be read.
             </p>
             <div className="mt-6 flex gap-3">
-              {socials.map(({ label, Icon }) => (
+              {socials.map(({ label, href, Icon }) => (
                 <a
                   key={label}
-                  href="#"
+                  href={href}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   aria-label={label}
                   className="inline-flex h-10 w-10 items-center justify-center rounded-sm border border-on-navy/20 text-on-navy transition-colors hover:border-gold hover:text-gold"
                 >
@@ -66,11 +88,6 @@ export function SiteFooter() {
                   className="text-on-navy-muted transition-colors hover:text-gold"
                 >
                   Contact
-                </Link>
-              </li>
-              <li>
-                <Link to="/offer" className="text-on-navy-muted transition-colors hover:text-gold">
-                  Author Starter Offer
                 </Link>
               </li>
               <li>

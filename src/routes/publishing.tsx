@@ -26,7 +26,7 @@ import { HeroForm } from "@/components/home/hero-form";
 import { PublishingForm } from "@/components/forms/publishing-form";
 import { cn } from "@/lib/utils";
 import publishingBanner from "@/assets/publishing banner.jpg";
-import pubMockup from "@/assets/pub mockup.png";
+import penovaMockup from "@/assets/penove mockup.png";
 import publishingProcessImg from "@/assets/publishing-process.jpg";
 import publishingDistributionImg from "@/assets/publishing-distribution.jpg";
 import publishingCoverImg from "@/assets/publishing-cover.jpg";
@@ -441,8 +441,8 @@ function Page() {
             <div className="absolute -inset-4 rounded-3xl bg-gradient-to-br from-gold/20 via-gold/5 to-transparent blur-2xl pointer-events-none" />
             <div className="relative rounded-2xl overflow-hidden shadow-[0_30px_70px_-20px_rgba(15,23,63,0.35)] ring-1 ring-gold/20">
               <img
-                src={pubMockup}
-                alt="Published book mockup"
+                src={penovaMockup}
+                alt="Penova publishing mockup"
                 className="w-full h-auto object-contain block"
               />
             </div>

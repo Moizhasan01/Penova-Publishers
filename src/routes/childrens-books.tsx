@@ -612,7 +612,7 @@ function Page() {
           <div style={{ textAlign: "center", marginBottom: 64 }}>
             <div style={{ display: "inline-flex", alignItems: "center", gap: 8, background: "#4ECDC418", border: "2px solid #4ECDC430", borderRadius: 999, padding: "6px 18px", marginBottom: 20 }}>
               <span style={{ fontSize: 16 }}>💡</span>
-              <span style={{ fontFamily: "'Manrope', sans-serif", fontSize: 11, fontWeight: 700, letterSpacing: "0.18em", textTransform: "uppercase", color: "#4ECDC4" }}>Why choose beacon</span>
+              <span style={{ fontFamily: "'Manrope', sans-serif", fontSize: 11, fontWeight: 700, letterSpacing: "0.18em", textTransform: "uppercase", color: "#4ECDC4" }}>Why choose Penova</span>
             </div>
             <h2 style={{ fontFamily: "'Cormorant Garamond', Georgia, serif", fontSize: "clamp(2.2rem, 4vw, 3.5rem)", fontWeight: 700, color: "#1a1a2e", lineHeight: 1.1, marginBottom: 16 }}>
               Publishing that puts the{" "}

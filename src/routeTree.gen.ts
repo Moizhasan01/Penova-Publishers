@@ -17,7 +17,6 @@ import { Route as EditingRouteImport } from './routes/editing'
 import { Route as GhostwritingRouteImport } from './routes/ghostwriting'
 import { Route as IllustrationRouteImport } from './routes/illustration'
 import { Route as MarketingRouteImport } from './routes/marketing'
-import { Route as OfferRouteImport } from './routes/offer'
 import { Route as PrivacyRouteImport } from './routes/privacy'
 import { Route as PrivacyChoicesRouteImport } from './routes/privacy-choices'
 import { Route as PublishingRouteImport } from './routes/publishing'
@@ -64,11 +63,6 @@ const MarketingRoute = MarketingRouteImport.update({
   path: '/marketing',
   getParentRoute: () => rootRouteImport,
 } as any)
-const OfferRoute = OfferRouteImport.update({
-  id: '/offer',
-  path: '/offer',
-  getParentRoute: () => rootRouteImport,
-} as any)
 const PrivacyRoute = PrivacyRouteImport.update({
   id: '/privacy',
   path: '/privacy',
@@ -104,7 +98,6 @@ export interface FileRoutesByFullPath {
   '/ghostwriting': typeof GhostwritingRoute
   '/illustration': typeof IllustrationRoute
   '/marketing': typeof MarketingRoute
-  '/offer': typeof OfferRoute
   '/privacy': typeof PrivacyRoute
   '/privacy-choices': typeof PrivacyChoicesRoute
   '/publishing': typeof PublishingRoute
@@ -120,7 +113,6 @@ export interface FileRoutesByTo {
   '/ghostwriting': typeof GhostwritingRoute
   '/illustration': typeof IllustrationRoute
   '/marketing': typeof MarketingRoute
-  '/offer': typeof OfferRoute
   '/privacy': typeof PrivacyRoute
   '/privacy-choices': typeof PrivacyChoicesRoute
   '/publishing': typeof PublishingRoute
@@ -137,7 +129,6 @@ export interface FileRoutesById {
   '/ghostwriting': typeof GhostwritingRoute
   '/illustration': typeof IllustrationRoute
   '/marketing': typeof MarketingRoute
-  '/offer': typeof OfferRoute
   '/privacy': typeof PrivacyRoute
   '/privacy-choices': typeof PrivacyChoicesRoute
   '/publishing': typeof PublishingRoute
@@ -155,7 +146,6 @@ export interface FileRouteTypes {
     | '/ghostwriting'
     | '/illustration'
     | '/marketing'
-    | '/offer'
     | '/privacy'
     | '/privacy-choices'
     | '/publishing'
@@ -171,7 +161,6 @@ export interface FileRouteTypes {
     | '/ghostwriting'
     | '/illustration'
     | '/marketing'
-    | '/offer'
     | '/privacy'
     | '/privacy-choices'
     | '/publishing'
@@ -187,7 +176,6 @@ export interface FileRouteTypes {
     | '/ghostwriting'
     | '/illustration'
     | '/marketing'
-    | '/offer'
     | '/privacy'
     | '/privacy-choices'
     | '/publishing'
@@ -204,7 +192,6 @@ export interface RootRouteChildren {
   GhostwritingRoute: typeof GhostwritingRoute
   IllustrationRoute: typeof IllustrationRoute
   MarketingRoute: typeof MarketingRoute
-  OfferRoute: typeof OfferRoute
   PrivacyRoute: typeof PrivacyRoute
   PrivacyChoicesRoute: typeof PrivacyChoicesRoute
   PublishingRoute: typeof PublishingRoute
@@ -270,13 +257,6 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof MarketingRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/offer': {
-      id: '/offer'
-      path: '/offer'
-      fullPath: '/offer'
-      preLoaderRoute: typeof OfferRouteImport
-      parentRoute: typeof rootRouteImport
-    }
     '/privacy': {
       id: '/privacy'
       path: '/privacy'
@@ -324,7 +304,6 @@ const rootRouteChildren: RootRouteChildren = {
   GhostwritingRoute: GhostwritingRoute,
   IllustrationRoute: IllustrationRoute,
   MarketingRoute: MarketingRoute,
-  OfferRoute: OfferRoute,
   PrivacyRoute: PrivacyRoute,
   PrivacyChoicesRoute: PrivacyChoicesRoute,
   PublishingRoute: PublishingRoute,

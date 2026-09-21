@@ -8,31 +8,31 @@ import { Link } from "@tanstack/react-router";
 const socialLinks = [
   {
     icon: FaFacebookF,
-    href: "#facebook",
+    href: "https://www.facebook.com/Penovapublishers/",
     label: "Facebook",
     ariaLabel: "Visit our Facebook page",
   },
   {
     icon: FaInstagram,
-    href: "#instagram",
+    href: "https://www.instagram.com/",
     label: "Instagram",
     ariaLabel: "Visit our Instagram page",
   },
   {
     icon: FaLinkedinIn,
-    href: "#linkedin",
+    href: "https://www.linkedin.com/company/penovapublishers/",
     label: "LinkedIn",
     ariaLabel: "Visit our LinkedIn page",
   },
   {
     icon: FaPinterestP,
-    href: "#pinterest",
+    href: "https://pin.it/3FGiGAFKg",
     label: "Pinterest",
     ariaLabel: "Visit our Pinterest page",
   },
   {
     icon: FaTiktok,
-    href: "#tiktok",
+    href: "https://www.tiktok.com/",
     label: "TikTok",
     ariaLabel: "Visit our TikTok page",
   },
@@ -54,9 +54,24 @@ const contactLinks = [
 ];
 
 const reviewLinks = [
-  { label: "Trustpilot", mark: SiTrustpilot, className: "text-[#00b67a]" },
-  { label: "Trustindex", mark: "T", className: "text-white" },
-  { label: "Sortlist", mark: "S", className: "text-[#ff6b35]" },
+  {
+    label: "Trustpilot",
+    mark: SiTrustpilot,
+    className: "text-[#00b67a]",
+    href: "https://www.trustpilot.com/review/penovapublishers.com",
+  },
+  {
+    label: "Trustindex",
+    mark: "T",
+    className: "text-white",
+    href: "https://www.trustindex.io/reviews/penovapublishers.com",
+  },
+  {
+    label: "Sortlist",
+    mark: "S",
+    className: "text-[#ff6b35]",
+    href: "https://www.sortlist.com/agency/penova-publishers",
+  },
 ];
 
 export function StickySideIcons() {
@@ -121,7 +136,9 @@ function ReviewLink({
 
   return (
     <a
-      href="#"
+      href={link.href}
+      target="_blank"
+      rel="noopener noreferrer"
       aria-label={`View our ${link.label} reviews`}
       title={link.label}
       className="group flex h-12 w-12 items-center justify-center text-sm font-bold transition-colors duration-300 hover:bg-gold/10"
@@ -143,6 +160,8 @@ function SidebarIcon({
   return (
     <a
       href={link.href}
+      target="_blank"
+      rel="noopener noreferrer"
       aria-label={link.ariaLabel}
       className="group flex h-12 w-12 items-center justify-center text-gold/60 transition-colors duration-300 hover:bg-gold/10 hover:text-gold"
       title={link.label}
