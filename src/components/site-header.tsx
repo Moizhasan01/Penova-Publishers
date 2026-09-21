@@ -29,7 +29,7 @@ export function SiteHeader() {
   return (
     <header
       className={cn(
-        "sticky top-0 z-50 w-full transition-all duration-300",
+        "relative z-50 w-full transition-all duration-300",
         scrolled
           ? "border-b border-border/60 bg-cream/98 backdrop-blur-lg shadow-[0_4px_24px_-10px_rgba(15,27,45,0.08)]"
           : "border-b border-transparent bg-cream",
@@ -94,7 +94,7 @@ export function SiteHeader() {
           )}
         >
           <div className="flex items-center justify-between">
-            <BrandLogo compact />
+            <BrandLogo compact onNavy />
             <button
               type="button"
               onClick={() => setOpen(false)}

@@ -15,7 +15,7 @@ export function ChildrensBooksForm() {
         background: "linear-gradient(135deg, rgba(255,179,71,0.4), rgba(78,205,196,0.3), rgba(255,107,107,0.3))"
       }} />
 
-      <div className="relative rounded-[2rem] border border-white/60 bg-white/70 p-7 shadow-[0_24px_50px_rgba(0,0,0,0.05)] backdrop-blur-xl xl:p-9 transition-all duration-500 hover:shadow-[0_30px_60px_rgba(0,0,0,0.08)]">
+      <div className="kids-form-shell relative rounded-[2rem] border border-white/60 bg-white/70 p-5 shadow-[0_24px_50px_rgba(0,0,0,0.05)] backdrop-blur-xl sm:p-7 xl:p-9 transition-all duration-500 hover:shadow-[0_30px_60px_rgba(0,0,0,0.08)]">
         
         {/* Decorative elements */}
         <div className="absolute top-8 right-8 text-2xl opacity-60 transition-transform duration-700 hover:rotate-12">✨</div>

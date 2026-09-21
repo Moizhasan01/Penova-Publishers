@@ -330,6 +330,7 @@ function FaqItem({ item, index }: { item: typeof FAQS[0]; index: number }) {
       }}
     >
       <button
+        className="kids-faq-button"
         onClick={() => setOpen(!open)}
         style={{
           width: "100%", display: "flex", alignItems: "center", justifyContent: "space-between",
@@ -337,7 +338,7 @@ function FaqItem({ item, index }: { item: typeof FAQS[0]; index: number }) {
           textAlign: "left", gap: 16,
         }}
       >
-        <div style={{ display: "flex", alignItems: "center", gap: 14 }}>
+        <div className="kids-faq-question" style={{ display: "flex", alignItems: "center", gap: 14 }}>
           <span style={{
             width: 32, height: 32, borderRadius: "50%", background: c, flexShrink: 0,
             display: "flex", alignItems: "center", justifyContent: "center",
@@ -353,7 +354,7 @@ function FaqItem({ item, index }: { item: typeof FAQS[0]; index: number }) {
         <ChevronDown style={{ width: 20, height: 20, color: c, flexShrink: 0, transform: open ? "rotate(180deg)" : "rotate(0deg)", transition: "transform 0.3s ease" }} />
       </button>
       {open && (
-        <div style={{ padding: "0 24px 20px 70px", fontSize: 15, lineHeight: 1.7, color: "#555" }}>
+        <div className="kids-faq-answer" style={{ padding: "0 24px 20px 70px", fontSize: 15, lineHeight: 1.7, color: "#555" }}>
           {item.a}
         </div>
       )}
@@ -366,6 +367,8 @@ function Page() {
   return (
     <SiteLayout>
       <style>{`
+        body:has(.kids-hero) { overflow-x: hidden; }
+
         @keyframes kids-float {
           0%, 100% { transform: translateY(0px) rotate(0deg); }
           33%       { transform: translateY(-14px) rotate(4deg); }
@@ -390,10 +393,48 @@ function Page() {
         }
         .kids-marquee { animation: marquee-kids 32s linear infinite; }
         .kids-marquee:hover { animation-play-state: paused; }
+
+        @media (max-width: 1023px) {
+          .kids-hero-grid { grid-template-columns: 1fr !important; gap: 40px !important; }
+          .kids-hero-form { display: flex !important; }
+          .kids-hero-copy { max-width: 720px; }
+          .kids-promise-grid { grid-template-columns: 1fr !important; gap: 48px !important; }
+        }
+
+        @media (max-width: 639px) {
+          .kids-hero { min-height: auto !important; align-items: flex-start !important; }
+          .kids-hero-grid { padding: 56px 20px 92px !important; gap: 32px !important; }
+          .kids-hero-badge { max-width: 100%; padding: 8px 14px !important; }
+          .kids-hero-badge span { letter-spacing: 0.12em !important; }
+          .kids-hero-title { font-size: clamp(2.8rem, 14vw, 4.5rem) !important; margin-bottom: 22px !important; }
+          .kids-hero-description { font-size: 16px !important; margin-bottom: 28px !important; }
+          .kids-hero-ctas { flex-direction: column; align-items: stretch; gap: 12px !important; }
+          .kids-hero-ctas a { justify-content: center; padding: 14px 18px !important; text-align: center; }
+          .kids-hero-stats { gap: 20px !important; margin-top: 32px !important; }
+          .kids-hero-form { width: 100%; }
+          .kids-section { padding: 64px 20px !important; }
+          .kids-section-heading { margin-bottom: 40px !important; }
+          .kids-section-heading h2 { font-size: clamp(2rem, 11vw, 3rem) !important; }
+          .kids-promise-orbit { transform: scale(0.78); margin: -38px 0; }
+          .kids-faq-button { padding: 16px !important; gap: 10px !important; }
+          .kids-faq-question { gap: 10px !important; }
+          .kids-faq-answer { padding: 0 16px 18px 58px !important; }
+          .kids-cta { padding: 64px 20px !important; }
+          .kids-cta-actions { flex-direction: column; align-items: stretch; }
+          .kids-cta-actions a { justify-content: center; padding: 16px 18px !important; text-align: center; }
+          .kids-cta-benefits { gap: 16px !important; margin-top: 36px !important; }
+        }
+
+        @media (max-width: 380px) {
+          .kids-hero-grid { padding-inline: 16px !important; }
+          .kids-section, .kids-cta { padding-inline: 16px !important; }
+          .kids-hero-title { font-size: 2.7rem !important; }
+          .kids-form-shell { border-radius: 1.5rem !important; }
+        }
       `}</style>
 
       {/* ══ HERO ══════════════════════════════════════════════ */}
-      <section style={{
+      <section className="kids-hero" style={{
         position: "relative", overflow: "hidden",
         background: "linear-gradient(135deg, #1a1a2e 0%, #16213e 55%, #0f3460 100%)",
         minHeight: "88vh", display: "flex", alignItems: "center",
@@ -414,12 +455,12 @@ function Page() {
         <FloatingShape size={38} color="#FFDAC1" top="5%" left="55%" delay={5} shape="heart" />
         <FloatingShape size={30} color="#FF6B6B" top="40%" left="92%" delay={6} shape="star" />
 
-        <div style={{ position: "relative", zIndex: 1, maxWidth: 1280, margin: "0 auto", padding: "80px 32px", width: "100%", display: "grid", gridTemplateColumns: "1.1fr 0.9fr", gap: 64, alignItems: "center" }}>
+        <div className="kids-hero-grid" style={{ position: "relative", zIndex: 1, maxWidth: 1280, margin: "0 auto", padding: "80px 32px", width: "100%", display: "grid", gridTemplateColumns: "1.1fr 0.9fr", gap: 64, alignItems: "center" }}>
 
           {/* Left */}
-          <div>
+          <div className="kids-hero-copy">
             {/* Badge */}
-            <div style={{
+            <div className="kids-hero-badge" style={{
               display: "inline-flex", alignItems: "center", gap: 8,
               background: "rgba(255,255,255,0.1)", border: "1px solid rgba(255,255,255,0.2)",
               backdropFilter: "blur(8px)", borderRadius: 999, padding: "8px 20px",
@@ -433,7 +474,7 @@ function Page() {
             </div>
 
             {/* H1 */}
-            <h1 style={{
+            <h1 className="kids-hero-title" style={{
               fontFamily: "'Cormorant Garamond', Georgia, serif",
               fontSize: "clamp(3rem, 6vw, 5.5rem)", fontWeight: 700,
               lineHeight: 1.05, color: "white", marginBottom: 28,
@@ -461,7 +502,7 @@ function Page() {
             <div style={{ height: 4, width: 80, borderRadius: 99, background: "linear-gradient(90deg, #FF6B6B, #FFE66D, #4ECDC4)", marginBottom: 28, animation: "kids-bounce-in 0.7s 0.3s both" }} />
 
             {/* Body */}
-            <p style={{
+            <p className="kids-hero-description" style={{
               fontFamily: "'Manrope', sans-serif", fontSize: 18, lineHeight: 1.7,
               color: "rgba(255,255,255,0.78)", maxWidth: 520, marginBottom: 40,
               animation: "kids-bounce-in 0.7s 0.45s both",
@@ -471,7 +512,7 @@ function Page() {
             </p>
 
             {/* CTAs */}
-            <div style={{ display: "flex", flexWrap: "wrap", gap: 16, animation: "kids-bounce-in 0.7s 0.6s both" }}>
+            <div className="kids-hero-ctas" style={{ display: "flex", flexWrap: "wrap", gap: 16, animation: "kids-bounce-in 0.7s 0.6s both" }}>
               <Link
                 to="/signup"
                 style={{
@@ -509,7 +550,7 @@ function Page() {
             <HeroReviewRatings className="mt-8" />
 
             {/* Mini stats */}
-            <div style={{ display: "flex", gap: 28, marginTop: 44, flexWrap: "wrap", animation: "kids-bounce-in 0.7s 0.75s both" }}>
+            <div className="kids-hero-stats" style={{ display: "flex", gap: 28, marginTop: 44, flexWrap: "wrap", animation: "kids-bounce-in 0.7s 0.75s both" }}>
               {[["340+", "Books Published"], ["4.9★", "Author Rating"], ["18 yrs", "Experience"]].map(([val, lbl]) => (
                 <div key={lbl}>
                   <p style={{ fontFamily: "'Cormorant Garamond', Georgia, serif", fontSize: 26, fontWeight: 700, color: "#FFE66D", lineHeight: 1 }}>{val}</p>
@@ -520,7 +561,7 @@ function Page() {
           </div>
 
           {/* Right side form */}
-          <div style={{ position: "relative", display: "flex", alignItems: "center", justifyContent: "center", animation: "kids-bounce-in 1s cubic-bezier(0.34,1.56,0.64,1) 0.25s both" }}
+          <div className="kids-hero-form" style={{ position: "relative", display: "flex", alignItems: "center", justifyContent: "center", animation: "kids-bounce-in 1s cubic-bezier(0.34,1.56,0.64,1) 0.25s both" }}
             className="hidden lg:flex">
             <ChildrensBooksForm />
           </div>
@@ -567,9 +608,9 @@ function Page() {
       </section>
 
       {/* ══ BOOK TYPES ══════════════════════════════════════════ */}
-      <section style={{ background: "#FFF9F4", padding: "96px 32px" }}>
+      <section className="kids-section" style={{ background: "#FFF9F4", padding: "96px 32px" }}>
         <div style={{ maxWidth: 1200, margin: "0 auto" }}>
-          <div style={{ textAlign: "center", marginBottom: 64 }}>
+          <div className="kids-section-heading" style={{ textAlign: "center", marginBottom: 64 }}>
             <div style={{ display: "inline-flex", alignItems: "center", gap: 8, background: "#FF6B6B18", border: "2px solid #FF6B6B30", borderRadius: 999, padding: "6px 18px", marginBottom: 20 }}>
               <span style={{ fontSize: 16 }}>📖</span>
               <span style={{ fontFamily: "'Manrope', sans-serif", fontSize: 11, fontWeight: 700, letterSpacing: "0.18em", textTransform: "uppercase", color: "#FF6B6B" }}>What we make</span>
@@ -605,11 +646,11 @@ function Page() {
       </section>
 
       {/* ══ WHY US ══════════════════════════════════════════════ */}
-      <section style={{ position: "relative", overflow: "hidden", background: "linear-gradient(160deg, #e8f8f5 0%, #fff3e8 50%, #fce4f4 100%)", padding: "96px 32px" }}>
+      <section className="kids-section" style={{ position: "relative", overflow: "hidden", background: "linear-gradient(160deg, #e8f8f5 0%, #fff3e8 50%, #fce4f4 100%)", padding: "96px 32px" }}>
         <FloatingShape size={100} color="#FF6B6B" top="-5%" left="-3%" delay={0} shape="circle" />
         <FloatingShape size={80} color="#4ECDC4" top="70%" left="92%" delay={2} shape="circle" />
         <div style={{ maxWidth: 1200, margin: "0 auto", position: "relative", zIndex: 1 }}>
-          <div style={{ textAlign: "center", marginBottom: 64 }}>
+          <div className="kids-section-heading" style={{ textAlign: "center", marginBottom: 64 }}>
             <div style={{ display: "inline-flex", alignItems: "center", gap: 8, background: "#4ECDC418", border: "2px solid #4ECDC430", borderRadius: 999, padding: "6px 18px", marginBottom: 20 }}>
               <span style={{ fontSize: 16 }}>💡</span>
               <span style={{ fontFamily: "'Manrope', sans-serif", fontSize: 11, fontWeight: 700, letterSpacing: "0.18em", textTransform: "uppercase", color: "#4ECDC4" }}>Why choose Penova</span>
@@ -633,9 +674,9 @@ function Page() {
       </section>
 
       {/* ══ ART STYLES ══════════════════════════════════════════ */}
-      <section style={{ background: "#FFF9F4", padding: "96px 32px" }}>
+      <section className="kids-section" style={{ background: "#FFF9F4", padding: "96px 32px" }}>
         <div style={{ maxWidth: 1200, margin: "0 auto" }}>
-          <div style={{ textAlign: "center", marginBottom: 64 }}>
+          <div className="kids-section-heading" style={{ textAlign: "center", marginBottom: 64 }}>
             <div style={{ display: "inline-flex", alignItems: "center", gap: 8, background: "#C7CEEA30", border: "2px solid #C7CEEA60", borderRadius: 999, padding: "6px 18px", marginBottom: 20 }}>
               <span style={{ fontSize: 16 }}>🖌️</span>
               <span style={{ fontFamily: "'Manrope', sans-serif", fontSize: 11, fontWeight: 700, letterSpacing: "0.18em", textTransform: "uppercase", color: "#8a90c8" }}>Art styles</span>
@@ -660,14 +701,14 @@ function Page() {
       </section>
 
       {/* ══ PROCESS ═════════════════════════════════════════════ */}
-      <section style={{ position: "relative", overflow: "hidden", background: "linear-gradient(135deg, #1a1a2e 0%, #0f3460 100%)", padding: "96px 32px" }}>
+      <section className="kids-section" style={{ position: "relative", overflow: "hidden", background: "linear-gradient(135deg, #1a1a2e 0%, #0f3460 100%)", padding: "96px 32px" }}>
         <div style={{ position: "absolute", inset: 0, pointerEvents: "none", backgroundImage: "radial-gradient(circle, rgba(255,255,255,0.06) 1px, transparent 1px)", backgroundSize: "28px 28px" }} />
         <FloatingShape size={70} color="#FF6B6B" top="10%" left="2%" delay={1} shape="star" />
         <FloatingShape size={55} color="#4ECDC4" top="80%" left="92%" delay={3} shape="circle" />
         <FloatingShape size={45} color="#FFE66D" top="55%" left="1%" delay={5} shape="heart" />
 
         <div style={{ maxWidth: 1200, margin: "0 auto", position: "relative", zIndex: 1 }}>
-          <div style={{ textAlign: "center", marginBottom: 64 }}>
+          <div className="kids-section-heading" style={{ textAlign: "center", marginBottom: 64 }}>
             <div style={{ display: "inline-flex", alignItems: "center", gap: 8, background: "rgba(255,230,109,0.15)", border: "2px solid rgba(255,230,109,0.3)", borderRadius: 999, padding: "6px 18px", marginBottom: 20 }}>
               <span style={{ fontSize: 16 }}>🚀</span>
               <span style={{ fontFamily: "'Manrope', sans-serif", fontSize: 11, fontWeight: 700, letterSpacing: "0.18em", textTransform: "uppercase", color: "#FFE66D" }}>How it works</span>
@@ -689,9 +730,8 @@ function Page() {
       </section>
 
       {/* ══ GUARANTEE ═══════════════════════════════════════════ */}
-      <section style={{ background: "linear-gradient(160deg, #fce4f4 0%, #e8f8f5 100%)", padding: "96px 32px" }}>
-        <div style={{ maxWidth: 1100, margin: "0 auto", display: "grid", gridTemplateColumns: "1fr 1fr", gap: 80, alignItems: "center" }}
-          className="grid-cols-1 lg:grid-cols-2">
+      <section className="kids-section" style={{ background: "linear-gradient(160deg, #fce4f4 0%, #e8f8f5 100%)", padding: "96px 32px" }}>
+        <div className="kids-promise-grid" style={{ maxWidth: 1100, margin: "0 auto", display: "grid", gridTemplateColumns: "1fr 1fr", gap: 80, alignItems: "center" }}>
           {/* Left */}
           <div>
             <div style={{ display: "inline-flex", alignItems: "center", gap: 8, background: "#A8E6CF30", border: "2px solid #A8E6CF60", borderRadius: 999, padding: "6px 18px", marginBottom: 24 }}>
@@ -740,7 +780,7 @@ function Page() {
 
           {/* Right side orbiting planets */}
           <div style={{ position: "relative", display: "flex", alignItems: "center", justifyContent: "center" }}>
-            <div style={{ position: "relative", width: 340, height: 340 }}>
+            <div className="kids-promise-orbit" style={{ position: "relative", width: 340, height: 340 }}>
               <div style={{
                 position: "absolute", top: "50%", left: "50%", transform: "translate(-50%, -50%)",
                 width: 200, height: 200, borderRadius: "50%",
@@ -779,9 +819,9 @@ function Page() {
       </section>
 
       {/* ══ FAQ ═════════════════════════════════════════════════ */}
-      <section style={{ background: "#FFF9F4", padding: "96px 32px" }}>
+      <section className="kids-section" style={{ background: "#FFF9F4", padding: "96px 32px" }}>
         <div style={{ maxWidth: 780, margin: "0 auto" }}>
-          <div style={{ textAlign: "center", marginBottom: 56 }}>
+          <div className="kids-section-heading" style={{ textAlign: "center", marginBottom: 56 }}>
             <div style={{ display: "inline-flex", alignItems: "center", gap: 8, background: "#FFE66D20", border: "2px solid #FFE66D40", borderRadius: 999, padding: "6px 18px", marginBottom: 20 }}>
               <span style={{ fontSize: 16 }}>❓</span>
               <span style={{ fontFamily: "'Manrope', sans-serif", fontSize: 11, fontWeight: 700, letterSpacing: "0.18em", textTransform: "uppercase", color: "#c9920a" }}>Got questions?</span>
@@ -800,7 +840,7 @@ function Page() {
       </section>
 
       {/* ══ CTA BANNER ══════════════════════════════════════════ */}
-      <section style={{ position: "relative", overflow: "hidden", background: "linear-gradient(135deg, #1a1a2e 0%, #0f3460 60%, #1a1a2e 100%)", padding: "96px 32px" }}>
+      <section className="kids-cta" style={{ position: "relative", overflow: "hidden", background: "linear-gradient(135deg, #1a1a2e 0%, #0f3460 60%, #1a1a2e 100%)", padding: "96px 32px" }}>
         <div style={{ position: "absolute", top: "-30%", right: "-10%", width: 500, height: 500, borderRadius: "50%", background: "radial-gradient(circle, #FF6B6B18 0%, transparent 70%)", pointerEvents: "none" }} />
         <div style={{ position: "absolute", bottom: "-30%", left: "-10%", width: 500, height: 500, borderRadius: "50%", background: "radial-gradient(circle, #4ECDC418 0%, transparent 70%)", pointerEvents: "none" }} />
         <FloatingShape size={55} color="#FFE66D" top="15%" left="10%" delay={0} shape="star" />
@@ -818,7 +858,7 @@ function Page() {
           <p style={{ fontFamily: "'Manrope', sans-serif", fontSize: 18, color: "rgba(255,255,255,0.72)", maxWidth: 540, margin: "0 auto 44px", lineHeight: 1.7 }}>
             Built page by page. Painted with care. Tell us your story and we'll build the book your child will never want to stop reading.
           </p>
-          <div style={{ display: "flex", gap: 16, justifyContent: "center", flexWrap: "wrap" }}>
+          <div className="kids-cta-actions" style={{ display: "flex", gap: 16, justifyContent: "center", flexWrap: "wrap" }}>
             <Link
               to="/signup"
               style={{
@@ -853,7 +893,7 @@ function Page() {
               Book a Free Consultation
             </Link>
           </div>
-          <div style={{ display: "flex", justifyContent: "center", gap: 36, marginTop: 52, flexWrap: "wrap" }}>
+          <div className="kids-cta-benefits" style={{ display: "flex", justifyContent: "center", gap: 36, marginTop: 52, flexWrap: "wrap" }}>
             {["340+ Books Published", "Author keeps all rights", "Fixed price, no surprises"].map((t) => (
               <div key={t} style={{ display: "flex", alignItems: "center", gap: 8 }}>
                 <CheckCircle2 style={{ width: 16, height: 16, color: "#A8E6CF" }} />

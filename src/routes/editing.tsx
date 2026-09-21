@@ -219,7 +219,7 @@ function Page() {
               return (
                 <Reveal key={service.title} delay={i * 80}>
                   <div className="group relative h-full rounded-2xl border border-border/60 bg-white p-10 transition-all duration-500 hover:-translate-y-2 hover:border-gold/40 hover:shadow-[0_20px_40px_-15px_rgba(212,175,55,0.2)] overflow-hidden">
-                    <div className="absolute right-0 top-0 -mt-8 -mr-8 text-9xl font-serif text-navy-deep/5 transition-transform duration-700 group-hover:scale-110 group-hover:text-gold/5 pointer-events-none select-none">
+                    <div className="pointer-events-none absolute right-2 top-2 text-7xl font-serif text-navy-deep/5 transition-transform duration-700 group-hover:scale-110 group-hover:text-gold/5 select-none sm:text-9xl lg:right-0 lg:top-0 lg:-mr-8 lg:-mt-8">
                       0{i + 1}
                     </div>
                     
@@ -273,7 +273,7 @@ function Page() {
             </div>
             
             {/* Animated Typing Box */}
-            <div className="absolute -left-6 bottom-1/4 z-10 w-72 rounded-xl border border-white/80 bg-navy-deep p-6 shadow-2xl transform transition-transform duration-700 hover:translate-y-2">
+            <div className="absolute bottom-0 left-0 z-10 w-full rounded-xl border border-white/80 bg-navy-deep p-6 shadow-2xl transform transition-transform duration-700 hover:translate-y-2 lg:bottom-1/4 lg:-left-6 lg:w-72">
               <Quote className="h-6 w-6 text-gold mb-3 opacity-50" />
               <div className="typing-container">
                 <p className="typing-text font-serif text-xl leading-snug text-white">

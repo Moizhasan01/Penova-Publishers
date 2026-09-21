@@ -119,7 +119,13 @@ export function HeroReviewRatings({
         </div>
       </div>
       <span className={cn("h-8 w-px", onLight ? "bg-navy-deep/15" : "bg-on-navy/15")} aria-hidden="true" />
-      <div className="flex items-center gap-3">
+      <a
+        href="https://www.trustpilot.com/review/penovapublishers.com"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="View our Trustpilot reviews"
+        className="flex items-center gap-3 rounded-sm transition-opacity hover:opacity-80"
+      >
         <span aria-hidden="true" className="flex h-8 w-8 items-center justify-center rounded-sm bg-[#00b67a] text-xl leading-none text-white">
           ★
         </span>
@@ -127,7 +133,7 @@ export function HeroReviewRatings({
           <p className={cn("text-sm font-semibold", onLight ? "text-navy-deep" : "text-on-navy")}>Trustpilot</p>
           <p className="mt-0.5 text-[0.62rem] uppercase tracking-[0.14em]">4.9 rating</p>
         </div>
-      </div>
+      </a>
     </div>
   );
 }
@@ -184,33 +190,6 @@ export function PlatformStrip({
         </div>
       </div>
     </section>
-  );
-}
-
-export function TrustBadges() {
-  const badges = [
-    { name: "Trustpilot", score: "4.9", count: "412 reviews" },
-    { name: "Google Reviews", score: "4.8", count: "286 reviews" },
-    { name: "Reviews.io", score: "4.9", count: "173 reviews" },
-    { name: "Authors Published", score: "1,240+", count: "since inception" },
-  ];
-  return (
-    <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-      {badges.map((b, i) => (
-        <Reveal key={b.name} delay={i * 80}>
-          <div className="card-lift h-full rounded-md border border-border bg-card p-6 text-center group hover-lift">
-            <p className="font-serif text-4xl text-navy-deep group-hover:text-gold transition-colors duration-300">{b.score}</p>
-            <div className="mt-2 flex justify-center gap-0.5">
-              {Array.from({ length: 5 }).map((_, s) => (
-                <Star key={s} className="h-3.5 w-3.5 fill-gold text-gold transition-transform duration-300 hover:scale-125" />
-              ))}
-            </div>
-            <p className="mt-3 text-sm font-semibold text-navy-deep">{b.name}</p>
-            <p className="text-xs text-muted-foreground">{b.count}</p>
-          </div>
-        </Reveal>
-      ))}
-    </div>
   );
 }
 

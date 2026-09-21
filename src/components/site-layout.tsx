@@ -8,7 +8,7 @@ export function SiteLayout({ children }: { children: ReactNode }) {
   useEffect(() => {
     // Initialize Brevo Conversations
     (function(d, w, c) {
-      w.BrevoConversationsID = '6a9f0190f7c46c27ab0ee80a';
+      w.BrevoConversationsID = '6ab15adfaece481469082ab5';
       w[c] = w[c] || function() {
         (w[c].q = w[c].q || []).push(arguments);
       };

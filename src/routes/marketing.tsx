@@ -18,7 +18,6 @@ import {
   ProcessSteps,
   FaqAccordion,
   HeroReviewRatings,
-  TrustBadges,
 } from "@/components/sections";
 import { HeroForm } from "@/components/home/hero-form";
 import { MarketingForm } from "@/components/forms/marketing-form";
@@ -373,24 +372,6 @@ function Page() {
         />
         <div className="mt-16">
           <ProcessSteps steps={marketingProcess} />
-        </div>
-      </section>
-
-      {/* -------- Social Proof -------- */}
-      <section className="bg-navy-deep py-28 lg:py-36">
-        <div className="mx-auto max-w-7xl px-5 lg:px-8">
-          <div className="mb-12 text-center">
-            <p className="mb-4 text-xs font-semibold uppercase tracking-[0.2em] text-gold">
-              Trusted by Authors
-            </p>
-            <h2 className="text-4xl md:text-5xl font-serif text-white mb-8">
-              Real results for real books.
-            </h2>
-          </div>
-          {/* Using TrustBadges with a light theme override if possible, or wrapping in a div that handles it */}
-          <div className="opacity-90">
-             <TrustBadges />
-          </div>
         </div>
       </section>
 

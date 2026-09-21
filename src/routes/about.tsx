@@ -2,7 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { Anchor, Compass, Feather, HeartHandshake } from "lucide-react";
 import { SiteLayout } from "@/components/site-layout";
 import { Reveal } from "@/components/reveal";
-import { CtaBanner, PageHero, SectionHeading, TrustBadges } from "@/components/sections";
+import { CtaBanner, PageHero, SectionHeading } from "@/components/sections";
 import spines from "@/assets/book-spines.jpg";
 
 const TITLE = "About Penova Publishers | A Boutique Publishing House";
@@ -158,19 +158,6 @@ function About() {
               </article>
             </Reveal>
           ))}
-        </div>
-      </section>
-
-      <section className="bg-cream-deep py-24 lg:py-28">
-        <div className="mx-auto max-w-7xl px-5 lg:px-8">
-          <SectionHeading
-            eyebrow="Why authors choose Penova"
-            title="Reputation earned one book at a time."
-            align="center"
-          />
-          <div className="mt-14">
-            <TrustBadges />
-          </div>
         </div>
       </section>
 

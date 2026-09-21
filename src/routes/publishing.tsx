@@ -20,7 +20,6 @@ import {
   PlatformStrip,
   ProcessSteps,
   FaqAccordion,
-  TrustBadges,
 } from "@/components/sections";
 import { HeroForm } from "@/components/home/hero-form";
 import { PublishingForm } from "@/components/forms/publishing-form";
@@ -500,7 +499,7 @@ function Page() {
             </div>
           </Reveal>
 
-          <Reveal delay={120} className="relative min-h-[420px]">
+          <Reveal delay={120} className="relative hidden min-h-[420px] lg:block">
             <div className="absolute left-0 top-0 w-[58%] overflow-hidden rounded-xl border border-white/15 shadow-2xl transition-transform duration-700 hover:-translate-y-2 hover:rotate-[-2deg]">
               <img src={publishingProcessImg} alt="A book moving through the publishing process" className="aspect-[4/3] w-full object-cover" />
               <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-navy-deep/90 to-transparent px-5 pb-4 pt-12"><p className="text-xs font-semibold uppercase tracking-[0.16em] text-gold">01 / Editorial craft</p></div>
@@ -545,19 +544,6 @@ function Page() {
             <ProcessSteps steps={publishingProcess} />
           </div>
         </div>
-      </section>
-
-      {/* -------- Social Proof / Trust -------- */}
-      <section className="mx-auto max-w-7xl px-5 py-28 lg:px-8 lg:py-36">
-        <div className="mb-12 text-center">
-          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-brown mb-4">
-            Trusted by authors
-          </p>
-          <h2 className="text-4xl md:text-5xl font-serif text-navy-deep mb-8">
-            The numbers speak.
-          </h2>
-        </div>
-        <TrustBadges />
       </section>
 
       {/* -------- FAQ -------- */}

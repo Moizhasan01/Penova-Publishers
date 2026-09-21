@@ -260,7 +260,7 @@ function Home() {
               {VALUES.map((v, i) => (
                 <Reveal as="li" key={v.title} delay={i * 80}>
                   <div className="group relative flex gap-6 rounded-2xl bg-white p-8 border border-border/50 shadow-[0_10px_30px_rgba(0,0,0,0.03)] transition-all duration-500 hover:-translate-y-1 hover:shadow-[0_20px_40px_rgba(212,175,55,0.1)] hover:border-gold/30 overflow-hidden">
-                    <div className="absolute right-0 top-0 -mt-4 -mr-4 text-9xl font-serif text-navy-deep/5 transition-transform duration-700 group-hover:scale-110 group-hover:text-gold/5 pointer-events-none select-none">
+                    <div className="pointer-events-none absolute right-4 top-4 text-7xl font-serif text-navy-deep/5 transition-transform duration-700 group-hover:scale-110 group-hover:text-gold/5 select-none sm:text-9xl lg:right-0 lg:top-0 lg:-mr-4 lg:-mt-4">
                       {String(i + 1)}
                     </div>
                     <span className="relative font-serif text-3xl text-gold transition-transform duration-500 group-hover:-translate-y-1">
