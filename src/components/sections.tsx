@@ -295,7 +295,7 @@ export function FaqAccordion({
 
 export function CtaBanner({
   title = "Your book deserves a proper harbour.",
-  body = "Tell us where your manuscript stands today. We will send back an honest assessment, a route to publication and a fixed quote — no obligation, no pressure.",
+  body = "Tell us where your manuscript stands today. We will send back an honest assessment, a route to publication and a fixed quote with no obligation and no pressure.",
   primary = "Get a Free Quote",
 }: {
   title?: string;

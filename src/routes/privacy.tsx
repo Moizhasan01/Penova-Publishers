@@ -2,7 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { SiteLayout } from "@/components/site-layout";
 import { PageHero } from "@/components/sections";
 
-const TITLE = "Privacy Policy — Penova Publishers";
+const TITLE = "Privacy Policy | Penova Publishers";
 const DESC =
   "Penova Publishers: boutique publishing, ghostwriting, editing, marketing, children's books and illustration for authors who keep 100% of their rights.";
 

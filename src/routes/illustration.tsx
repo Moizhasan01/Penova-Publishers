@@ -10,7 +10,7 @@ import bookCoversImg from "@/assets/illustration-book-covers.jpg";
 import processImg from "@/assets/illustration-process.jpg";
 
 /* ─── SEO ──────────────────────────────────────────────── */
-const TITLE = "Book Illustration — Penova Publishers";
+const TITLE = "Book Illustration | Penova Publishers";
 const DESC =
   "Premium book illustration services: whimsical children's art, character design, scene illustration, cover art, and complete visual direction. Funky, creative, professionally-crafted illustrations for every story and genre.";
 
@@ -72,7 +72,7 @@ const ILLUSTRATION_STYLES = [
     desc: "Whimsical, age-appropriate storytelling through vibrant, joyful visuals that young readers adore.",
     color: "#FF6B6B",
     bg: "linear-gradient(135deg, #fff5f5 0%, #ffe0e0 100%)",
-    tags: ["Ages 0–10", "Playful", "Expressive"],
+    tags: ["Ages 0 to 10", "Playful", "Expressive"],
     doodle: "✦",
   },
   {
@@ -105,7 +105,7 @@ const ILLUSTRATION_STYLES = [
   {
     name: "Scene Illustration",
     emoji: "🏞️",
-    desc: "Rich, detailed spreads that place readers inside your world — from cozy cottages to alien planets.",
+    desc: "Rich, detailed spreads that place readers inside your world, from cozy cottages to alien planets.",
     color: "#10B981",
     bg: "linear-gradient(135deg, #f0fdf4 0%, #d1fae5 100%)",
     tags: ["Detailed", "Atmospheric", "Lush"],
@@ -114,7 +114,7 @@ const ILLUSTRATION_STYLES = [
   {
     name: "Cover Art & Visual Identity",
     emoji: "📚",
-    desc: "Eye-catching covers engineered to stop scrolling and win shelf presence — optimized for print and digital.",
+    desc: "Eye-catching covers engineered to stop scrolling and win shelf presence, optimized for print and digital.",
     color: "#F43F5E",
     bg: "linear-gradient(135deg, #fff1f2 0%, #ffe4e6 100%)",
     tags: ["Market-ready", "Striking", "Genre-smart"],
@@ -179,7 +179,7 @@ const PROCESS_STEPS = [
     emoji: "💬",
     color: "#FF6B6B",
     title: "Story Consultation",
-    body: "We start by deeply understanding your story — your characters, the world, the emotional journey. Everything visual stems from this conversation.",
+    body: "We start by deeply understanding your story, your characters, the world and the emotional journey. Everything visual stems from this conversation.",
   },
   {
     num: "02",
@@ -200,43 +200,43 @@ const PROCESS_STEPS = [
     emoji: "🎨",
     color: "#06B6D4",
     title: "Final Artwork",
-    body: "High-resolution, production-ready illustrations in every format you need — print, digital, eBook, and beyond. Every pixel perfect.",
+    body: "High-resolution, production-ready illustrations in every format you need, from print and digital to eBook and beyond. Every pixel perfect.",
   },
 ];
 
 const WHY_ITEMS = [
-  { emoji: "🏅", title: "You Own Everything", body: "Full copyright and usage rights belong to you — no licensing fees, no ongoing royalties. Your art, forever." },
+  { emoji: "🏅", title: "You Own Everything", body: "Full copyright and usage rights belong to you, with no licensing fees and no ongoing royalties. Your art, forever." },
   { emoji: "🎭", title: "One Dedicated Illustrator", body: "The same artist sees your project from first sketch to final file, ensuring absolute visual consistency." },
   { emoji: "💎", title: "Fixed, Transparent Pricing", body: "You see the full investment before we start. No surprise invoices, no scope creep, no hourly drift." },
   { emoji: "🔄", title: "Revision Rounds Built In", body: "Multiple rounds where your feedback actively shapes the artwork. We refine until it's exactly right." },
-  { emoji: "📦", title: "Production-Ready Files", body: "High-res print files, digital formats, and source files — whatever your publishing pipeline needs." },
+  { emoji: "📦", title: "Production-Ready Files", body: "High-res print files, digital formats and source files, whatever your publishing pipeline needs." },
   { emoji: "📖", title: "Manuscript-First Approach", body: "We read your book before we draw a single line. Illustrations come from understanding, not templates." },
 ];
 
 const ILLUSTRATION_FAQS = [
   {
     q: "What illustration styles do you specialise in?",
-    a: "We cover the full range — whimsical watercolor, bold cartoon, painterly digital, character design, concept art, and maps. We match the style to your story and audience.",
+    a: "We cover the full range, from whimsical watercolor and bold cartoon to painterly digital, character design, concept art and maps. We match the style to your story and audience.",
   },
   {
     q: "How long does an illustration project take?",
-    a: "A single cover typically takes 3–6 weeks. Full interior illustration projects run 3–6 months. We provide a detailed timeline in your proposal upfront.",
+    a: "A single cover typically takes 3 to 6 weeks. Full interior illustration projects run 3 to 6 months. We provide a detailed timeline in your proposal upfront.",
   },
   {
     q: "Can I request revisions at every stage?",
     a: "Yes. Our structured process includes dedicated review rounds at sketch, refined sketch, and final colour stages. Your feedback actively shapes every piece.",
   },
   {
-    q: "Who owns the artwork — me or Penova?",
+    q: "Who owns the artwork, me or Penova?",
     a: "You own everything. All illustration rights, layered files, and usage belong to you in perpetuity. We are a services partner, not a rights-holding publisher.",
   },
   {
     q: "Can you illustrate just one piece, or must I commission the full book?",
-    a: "We work at any scope — a single cover, a few interior spreads, or an entire full-colour picture book. We scope and price exactly to your needs.",
+    a: "We work at any scope, from a single cover and a few interior spreads to an entire full-colour picture book. We scope and price exactly to your needs.",
   },
   {
     q: "How do you ensure illustrations match the tone of my story?",
-    a: "We read your manuscript and build a visual direction document before a single sketch is drawn. Tone, palette, character personality — all locked before artwork begins.",
+    a: "We read your manuscript and build a visual direction document before a single sketch is drawn. Tone, palette and character personality are all locked before artwork begins.",
   },
 ];
 
@@ -494,7 +494,7 @@ function WhyCard({ item, index }: { item: typeof WHY_ITEMS[0]; index: number }) 
 /* ─── Testimonial ──────────────────────────────────────── */
 const TESTIMONIALS = [
   {
-    quote: "The illustrations for my children's book were beyond anything I imagined. My daughter cried — the happy kind — when she saw the characters come to life.",
+    quote: "The illustrations for my children's book were beyond anything I imagined. My daughter cried, the happy kind, when she saw the characters come to life.",
     name: "Sarah M.",
     book: "The Lantern Whale",
     rating: 5,
@@ -1399,7 +1399,7 @@ function Page() {
             </Reveal>
             <Reveal delay={160}>
               <p className="illus-hero-desc">
-                From whimsical children's picture books to epic fantasy covers, Penova's illustrators craft visuals that don't just decorate stories — they become them.
+                From whimsical children's picture books to epic fantasy covers, Penova's illustrators craft visuals that do more than decorate stories. They become them.
               </p>
             </Reveal>
             <Reveal delay={240}>
@@ -1462,7 +1462,7 @@ function Page() {
             <h2 className="illus-section-title">Every Style.<br />Every Story.</h2>
             <div className="illus-section-rule" />
             <p className="illus-section-intro" style={{ marginTop: 20 }}>
-              We don't have one signature style — we have yours. Whatever visual language your story speaks, we speak it fluently.
+              We don't have one signature style. We have yours. Whatever visual language your story speaks, we speak it fluently.
             </p>
           </Reveal>
 
@@ -1487,7 +1487,7 @@ function Page() {
             <h2 className="illus-section-title">Illustrated<br />Worlds</h2>
             <div className="illus-section-rule" />
             <p className="illus-section-intro" style={{ marginTop: 20 }}>
-              A selection of books we've brought to life — each one a unique visual world built from scratch around the story it tells.
+              A selection of books we've brought to life, each one a unique visual world built from scratch around the story it tells.
             </p>
           </Reveal>
 
@@ -1502,7 +1502,7 @@ function Page() {
             <div style={{ marginTop: 60, borderRadius: 24, overflow: "hidden", boxShadow: "0 24px 72px rgba(0,0,0,0.14)" }}>
               <img
                 src={bookCoversImg}
-                alt="Sample illustrated book covers — children's books, fantasy novels, and graphic novels"
+                alt="Sample illustrated book covers for children's books, fantasy novels and graphic novels"
                 style={{ width: "100%", display: "block" }}
               />
             </div>
@@ -1523,7 +1523,7 @@ function Page() {
             <Reveal delay={100}>
               <img
                 src={processImg}
-                alt="Illustration process — sketchbook with character development stages"
+                alt="Illustration process showing a sketchbook with character development stages"
                 className="illus-process-img"
               />
             </Reveal>

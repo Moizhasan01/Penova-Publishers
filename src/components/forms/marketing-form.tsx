@@ -30,7 +30,7 @@ export function MarketingForm() {
             Reach the right readers.
           </h2>
           <p className="mt-2 text-sm font-light leading-relaxed text-navy-deep/60">
-            Tell us about your book and goals — we'll build a plan that delivers results.
+            Tell us about your book and goals and we will build a plan that delivers results.
           </p>
         </div>
 

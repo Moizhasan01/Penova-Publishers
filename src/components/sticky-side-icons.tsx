@@ -87,10 +87,10 @@ export function StickySideIcons() {
           .sticky-icon-track { animation: none; }
         }
       `}</style>
-      {/* Right side icons */}
+      {/* Right side review and social icons */}
       <div
         className="fixed right-0 top-1/2 z-40 hidden -translate-y-1/2 lg:flex"
-        aria-label="Social and contact links"
+        aria-label="Social and review links"
       >
         <div className="sticky-icon-track flex flex-col divide-y divide-gold/20 overflow-hidden rounded-l-xl border border-r-0 border-gold/20 bg-navy-deep/90 backdrop-blur-md">
           {reviewLinks.map((link) => (
@@ -100,27 +100,6 @@ export function StickySideIcons() {
             const Icon = link.icon;
             return <SidebarIcon key={link.label} link={link} Icon={Icon} />;
           })}
-        </div>
-      </div>
-
-      {/* Contact and quote actions */}
-      <div
-        className="fixed left-0 top-1/2 z-40 hidden -translate-y-1/2 lg:flex"
-        aria-label="Contact and quote links"
-      >
-        <div className="sticky-icon-track flex flex-col divide-y divide-gold/20 overflow-hidden rounded-r-xl border border-l-0 border-gold/20 bg-navy-deep/90 backdrop-blur-md">
-          {contactLinks.map((link) => {
-            const Icon = link.icon;
-            return <SidebarIcon key={link.label} link={link} Icon={Icon} />;
-          })}
-          <Link
-            to="/signup"
-            className="group flex h-12 w-12 items-center justify-center bg-gold text-navy-deep transition-colors duration-300 hover:bg-gold-light"
-            title="Get a Free Quote"
-            aria-label="Get a free quote"
-          >
-            <Quote className="h-4 w-4 transition-transform duration-300 group-hover:scale-110" />
-          </Link>
         </div>
       </div>
     </>

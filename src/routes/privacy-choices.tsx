@@ -2,7 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { PageHero } from "@/components/sections";
 import { SiteLayout } from "@/components/site-layout";
 
-const TITLE = "Privacy Choices — Penova Publishers";
+const TITLE = "Privacy Choices | Penova Publishers";
 
 export const Route = createFileRoute("/privacy-choices")({
   head: () => ({

@@ -3,7 +3,7 @@ import { SiteLayout } from "@/components/site-layout";
 import { PageHero } from "@/components/sections";
 import { CtaBanner } from "@/components/sections";
 
-const TITLE = "Contact — Penova Publishers";
+const TITLE = "Contact | Penova Publishers";
 const DESC =
   "Penova Publishers: boutique publishing, ghostwriting, editing, marketing, children's books and illustration for authors who keep 100% of their rights.";
 

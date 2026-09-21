@@ -35,7 +35,7 @@ import childrens from "@/assets/childrens-spread.jpg";
 import { HeroForm } from "@/components/home/hero-form";
 import { BookCarousel } from "@/components/home/book-carousel";
 
-const TITLE = "Penova Publishers — Book Publishing, Ghostwriting & Editing";
+const TITLE = "Penova Publishers | Book Publishing, Ghostwriting and Editing";
 const DESC =
   "Penova Publishers is a boutique publishing house offering publishing, ghostwriting, editing, marketing, children's books and illustration. Authors keep 100% of their rights.";
 
@@ -56,7 +56,7 @@ export const Route = createFileRoute("/")({
 const steps = [
   {
     title: "The Reading",
-    body: "You send what you have — a finished draft, a half-book, or a folder of notes. A senior editor reads it and tells you honestly what it needs.",
+    body: "You send what you have, whether it is a finished draft, a half-book or a folder of notes. A senior editor reads it and tells you honestly what it needs.",
   },
   {
     title: "The Plan",
@@ -109,8 +109,8 @@ function Home() {
             </h1>
             <span className="rule-gold mt-8" />
             <p className="mt-8 max-w-xl text-lg leading-relaxed text-on-navy-muted">
-              Penova Publishers guides authors from first page to finished book — writing, editing,
-              design, distribution and launch, handled by people who read for a living.
+              Penova Publishers guides authors from first page to finished book with writing, editing,
+              design, distribution and launch handled by people who read for a living.
             </p>
             <div className="mt-10 flex flex-wrap gap-3">
               <Link
@@ -219,7 +219,7 @@ function Home() {
               Watch a book come off the desk.
             </h2>
             <p className="text-lg md:text-xl leading-relaxed text-on-navy-muted font-light">
-              Short films from the editing room, the illustration studio and launch week — recorded with the authors who lived them.
+              Short films from the editing room, the illustration studio and launch week, recorded with the authors who lived them.
             </p>
           </Reveal>
           
@@ -254,7 +254,7 @@ function Home() {
             <SectionHeading
               eyebrow="Why authors choose Penova"
               title="A small house, built around the author."
-              intro="Writers were being sold packages instead of publishing. We work the other way round — one team per book, and a schedule you can hold us to."
+              intro="Writers were being sold packages instead of publishing. We do it the other way around with one team per book and a schedule you can hold us to."
             />
             <ul className="mt-14 space-y-6">
               {VALUES.map((v, i) => (

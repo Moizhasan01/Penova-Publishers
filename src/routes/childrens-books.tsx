@@ -19,7 +19,7 @@ import { ChildrensBooksForm } from "@/components/forms/childrens-books-form";
 import heroIllustration from "@/assets/childrens-spread.jpg";
 
 /* ─── SEO ─────────────────────────────────────────────── */
-const TITLE = "Children's Books — Penova Publishers";
+const TITLE = "Children's Books | Penova Publishers";
 const DESC =
   "From the first word to the final printed page, Penova Publishers crafts children's books that kids remember forever. Full-service writing, illustration, design, and publishing.";
 
@@ -59,7 +59,7 @@ function useReveal(threshold = 0.12) {
 const BOOK_TYPES = [
   { label: "Board Books", icon: "📚", color: "#FF6B6B", desc: "Sturdy pages for tiny hands" },
   { label: "Picture Books", icon: "🎨", color: "#4ECDC4", desc: "Art-first storytelling" },
-  { label: "Early Readers", icon: "🐣", color: "#FFB347", desc: "Ages 4–7 adventure" },
+  { label: "Early Readers", icon: "🐣", color: "#FFB347", desc: "Ages 4 to 7 adventure" },
   { label: "Chapter Books", icon: "🌟", color: "#A8E6CF", desc: "Young chapter readers" },
   { label: "Educational", icon: "🔬", color: "#C7CEEA", desc: "Learn & grow" },
   { label: "Bilingual", icon: "🌍", color: "#FFDAC1", desc: "Two languages, one story" },
@@ -85,7 +85,7 @@ const PROCESS_STEPS = [
   {
     num: "02", icon: "✍️", color: "#4ECDC4",
     title: "Write & Develop",
-    body: "Your manuscript crafted by children's book specialists — every word chosen for the right reader age and read-aloud rhythm.",
+    body: "Your manuscript crafted by children's book specialists, with every word chosen for the right reader age and read-aloud rhythm.",
   },
   {
     num: "03", icon: "🎨", color: "#FFB347",
@@ -108,7 +108,7 @@ const WHY_ITEMS = [
   {
     icon: Palette, color: "#FF6B6B", bg: "#FFF0F0",
     title: "Art That Kids Ask to See Again",
-    body: "Children return to the spread, not the sentence. The artwork is the memory — we make sure yours sticks.",
+    body: "Children return to the spread, not the sentence. The artwork is the memory, and we make sure yours sticks.",
   },
   {
     icon: Pen, color: "#4ECDC4", bg: "#F0FFFE",
@@ -118,12 +118,12 @@ const WHY_ITEMS = [
   {
     icon: Globe, color: "#FFB347", bg: "#FFFBF0",
     title: "Distributed Everywhere",
-    body: "Amazon, bookshops, school catalogues, libraries — your book lives wherever parents and teachers look.",
+    body: "Amazon, bookshops, school catalogues and libraries. Your book lives wherever parents and teachers look.",
   },
   {
     icon: Printer, color: "#A8E6CF", bg: "#F0FFF4",
     title: "Print That Feels Premium",
-    body: "Board book, hardcover, or paperback — we specify the right stock, binding, and finish for each format.",
+    body: "Board book, hardcover or paperback. We specify the right stock, binding and finish for each format.",
   },
 ];
 
@@ -134,11 +134,11 @@ const FAQS = [
   },
   {
     q: "How long does a children's book take to produce?",
-    a: "A typical picture book takes 3–5 months from first consultation to print-ready files. Board books and chapter books vary based on length and illustration scope.",
+    a: "A typical picture book takes 3 to 5 months from first consultation to print-ready files. Board books and chapter books vary based on length and illustration scope.",
   },
   {
     q: "Who owns the illustrations and rights?",
-    a: "You do — completely. Every illustration, file, and ISBN is registered in your name. Penova is a services partner, never a rights-acquiring publisher.",
+    a: "You do, completely. Every illustration, file and ISBN is registered in your name. Penova is a services partner, never a rights-acquiring publisher.",
   },
   {
     q: "Can I choose the art style?",
@@ -519,7 +519,7 @@ function Page() {
             </div>
           </div>
 
-          {/* Right — form */}
+          {/* Right side form */}
           <div style={{ position: "relative", display: "flex", alignItems: "center", justifyContent: "center", animation: "kids-bounce-in 1s cubic-bezier(0.34,1.56,0.64,1) 0.25s both" }}
             className="hidden lg:flex">
             <ChildrensBooksForm />
@@ -581,7 +581,7 @@ function Page() {
               </span>
             </h2>
             <p style={{ fontFamily: "'Manrope', sans-serif", fontSize: 17, color: "#888", maxWidth: 520, margin: "0 auto", lineHeight: 1.7 }}>
-              From board books for tiny hands to chapter books for growing readers — we craft every format with care.
+              From board books for tiny hands to chapter books for growing readers, we craft every format with care.
             </p>
           </div>
 
@@ -647,7 +647,7 @@ function Page() {
               </span>
             </h2>
             <p style={{ fontFamily: "'Manrope', sans-serif", fontSize: 17, color: "#888", maxWidth: 540, margin: "0 auto", lineHeight: 1.7 }}>
-              Watercolor, bold cartoon, pastel, cut paper, and more — every style matched to the story and its readers.
+              Watercolor, bold cartoon, pastel, cut paper and more, with every style matched to the story and its readers.
             </p>
           </div>
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(130px, 1fr))", gap: 16 }}>
@@ -705,7 +705,7 @@ function Page() {
               </span>
             </h2>
             <p style={{ fontFamily: "'Manrope', sans-serif", fontSize: 16, color: "#666", lineHeight: 1.7, marginBottom: 36 }}>
-              Children's books fail the moment two artists stitch a book together. Every project belongs to one illustrator — from cover to back endpaper.
+              Children's books fail the moment two artists stitch a book together. Every project belongs to one illustrator, from cover to back endpaper.
             </p>
             {[
               "One illustrator from cover to back endpaper",
@@ -738,7 +738,7 @@ function Page() {
             </Link>
           </div>
 
-          {/* Right — orbiting planets */}
+          {/* Right side orbiting planets */}
           <div style={{ position: "relative", display: "flex", alignItems: "center", justifyContent: "center" }}>
             <div style={{ position: "relative", width: 340, height: 340 }}>
               <div style={{

@@ -29,7 +29,7 @@ export function PublishingForm() {
           <p className="text-[0.68rem] font-semibold uppercase tracking-[0.22em] text-brown">Publishing Services</p>
           <h2 className="mt-1.5 font-serif text-2xl leading-snug text-navy-deep">Your book, published.</h2>
           <p className="mt-2 text-sm leading-relaxed text-muted-foreground font-light">
-            From manuscript to bookshelf — tell us where you are and we'll guide you through.
+            From manuscript to bookshelf, tell us where you are and we will guide you through it.
           </p>
         </div>
 
@@ -67,7 +67,7 @@ export function PublishingForm() {
               <option value="completed">Manuscript complete</option>
               <option value="edited">Already edited</option>
               <option value="ready">Ready to design &amp; produce</option>
-              <option value="unsure">Not sure — need guidance</option>
+              <option value="unsure">Not sure, need guidance</option>
             </select>
           </div>
 
@@ -75,7 +75,7 @@ export function PublishingForm() {
             <Label htmlFor="pub-goals" className="text-[0.68rem] font-semibold uppercase tracking-widest text-navy-deep/60">Publishing Goals</Label>
             <Textarea
               id="pub-goals"
-              placeholder="Print, ebook, distribution, timeline, budget — whatever matters most..."
+              placeholder="Print, ebook, distribution, timeline, budget and any other priorities..."
               className="min-h-[90px] resize-none rounded-xl border-navy-deep/15 bg-cream/45 p-4 text-sm text-navy-deep placeholder:text-navy-deep/35 shadow-none transition-all hover:border-navy-deep/25 focus-visible:border-gold/60 focus-visible:bg-cream focus-visible:ring-2 focus-visible:ring-gold/20"
             />
           </div>

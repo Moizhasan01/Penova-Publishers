@@ -15,7 +15,7 @@ export type FilmSlide = {
   alt: string;
 };
 
-/** Placeholder author films — swap `poster` for real video sources later. */
+/** Placeholder author films. Replace `poster` with real video sources later. */
 export const FILMS: FilmSlide[] = [
   {
     title: "Eleven years of notes, one spine",
@@ -54,7 +54,7 @@ export const FILMS: FilmSlide[] = [
 export const VALUES = [
   {
     title: "You keep everything",
-    body: "Rights, ISBN, royalties, files. Penova is a services partner — never a rights-acquiring publisher — and the contract says so in plain English.",
+    body: "Rights, ISBN, royalties and files are all yours. Penova is a services partner, not a rights-acquiring publisher, and the contract says so in plain English.",
   },
   {
     title: "One team per book",
@@ -66,7 +66,7 @@ export const VALUES = [
   },
   {
     title: "Read first, advise second",
-    body: "Every engagement opens with a senior editor reading your pages and telling you honestly what the book needs — even if that is less than you expected.",
+    body: "Every engagement opens with a senior editor reading your pages and telling you honestly what the book needs, even if that is less than you expected.",
   },
 ];
 

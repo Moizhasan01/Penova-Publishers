@@ -7,7 +7,7 @@ import { EditingForm } from "@/components/forms/editing-form";
 import editingDesk from "@/assets/editing-desk.jpg";
 import manuscriptImg from "@/assets/blog-manuscript.jpg";
 
-const TITLE = "Book Editing Services — Penova Publishers";
+const TITLE = "Book Editing Services | Penova Publishers";
 const DESC =
   "Our book editing team goes line by line, word by word, making sure your prose flows and your errors disappear. From developmental editing to proofreading.";
 
@@ -51,7 +51,7 @@ const editingServices = [
 const editingFaqs = [
   {
     q: "What is the difference between copy editing and line editing?",
-    a: "Line editing focuses on the style, flow, and rhythm of your sentences—making sure your voice sounds its best. Copy editing is more technical, focusing on grammar, spelling, punctuation, and consistency.",
+    a: "Line editing focuses on the style, flow and rhythm of your sentences, making sure your voice sounds its best. Copy editing is more technical, focusing on grammar, spelling, punctuation and consistency.",
   },
   {
     q: "Will an editor try to change my voice?",

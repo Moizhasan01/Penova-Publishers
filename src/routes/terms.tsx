@@ -2,7 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { PageHero } from "@/components/sections";
 import { SiteLayout } from "@/components/site-layout";
 
-const TITLE = "Terms & Conditions — Penova Publishers";
+const TITLE = "Terms & Conditions | Penova Publishers";
 
 export const Route = createFileRoute("/terms")({
   head: () => ({

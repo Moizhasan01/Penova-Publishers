@@ -3,13 +3,13 @@ export const SERVICES = [
     title: "Publishing",
     to: "/publishing" as const,
     blurb:
-      "Full-service and assisted publishing — manuscript to shelf, with print, ebook and audio distribution handled end to end.",
+      "Full-service and assisted publishing for authors who want print, ebook and audio distribution handled end to end.",
   },
   {
     title: "Ghostwriting",
     to: "/ghostwriting" as const,
     blurb:
-      "Matched writers who learn your voice, then write the book you have been carrying for years — chapter by chapter.",
+      "Matched writers who learn your voice and write the book you have been carrying for years, chapter by chapter.",
   },
   {
     title: "Editing",
@@ -99,7 +99,7 @@ export const TESTIMONIALS = [
 export const FAQS = [
   {
     q: "How much does it cost to publish with Penova?",
-    a: "Every book is quoted individually because word count, genre and ambition change the work involved. Editing-only engagements typically begin in the low four figures; full-service publishing with design, distribution and a launch campaign sits higher. You receive a written scope and fixed price before anything begins — no hourly surprises.",
+    a: "Every book is quoted individually because word count, genre and ambition change the work involved. Editing-only engagements typically begin in the low four figures; full-service publishing with design, distribution and a launch campaign sits higher. You receive a written scope and fixed price before anything begins, with no hourly surprises.",
   },
   {
     q: "Who owns the rights to my book?",

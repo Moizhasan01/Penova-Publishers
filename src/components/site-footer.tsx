@@ -140,7 +140,7 @@ export function SiteFooter() {
               onSubmit={(e) => {
                 e.preventDefault();
                 e.currentTarget.reset();
-                toast.success("You're on the list — welcome aboard.");
+                toast.success("You're on the list. Welcome aboard.");
               }}
             >
               <label htmlFor="newsletter" className="text-xs text-on-navy-muted">

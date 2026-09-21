@@ -27,7 +27,7 @@ import marketingHeroImg from "@/assets/marketing-hero.jpg";
 import marketingChannelsImg from "@/assets/marketing-channels.jpg";
 import marketingResultsImg from "@/assets/marketing-results.jpg";
 
-const TITLE = "Book Marketing Services — Penova Publishers";
+const TITLE = "Book Marketing Services | Penova Publishers";
 const DESC =
   "Amazon ads, social campaigns, PR outreach, and email marketing built for authors. Honest reporting, clear pricing.";
 
@@ -307,7 +307,7 @@ function Page() {
             <SectionHeading
               eyebrow="Honest Reporting"
               title="Data-driven strategy. Transparent results."
-              intro="We believe in marketing that you can measure. No vanity metrics or confusing spreadsheets—just clear reporting on what was spent and what it returned."
+              intro="We believe in marketing that you can measure. No vanity metrics or confusing spreadsheets, just clear reporting on what was spent and what it returned."
             />
             <ul className="mt-12 space-y-8">
               {[

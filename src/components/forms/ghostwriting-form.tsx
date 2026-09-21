@@ -5,7 +5,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Label } from "@/components/ui/label";
 
-// Dark-glass form — sits on top of the navy hero
+// Dark-glass form sits on top of the navy hero.
 export function GhostwritingForm() {
   const [hoveredField, setHoveredField] = useState<string | null>(null);
 
@@ -26,7 +26,7 @@ export function GhostwritingForm() {
           <p className="text-[0.68rem] font-semibold uppercase tracking-[0.22em] text-gold/80">Ghostwriting Studio</p>
           <h2 className="mt-1.5 font-serif text-2xl leading-snug text-on-navy">Share your story.</h2>
           <p className="mt-2 text-sm leading-relaxed text-on-navy-muted font-light">
-            Every great book begins with a conversation. Tell us what you want to say — we'll do the writing.
+            Every great book begins with a conversation. Tell us what you want to say and we will do the writing.
           </p>
         </div>
 

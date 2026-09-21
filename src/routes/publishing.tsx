@@ -31,7 +31,7 @@ import publishingProcessImg from "@/assets/publishing-process.jpg";
 import publishingDistributionImg from "@/assets/publishing-distribution.jpg";
 import publishingCoverImg from "@/assets/publishing-cover.jpg";
 
-const TITLE = "Publishing — Penova Publishers";
+const TITLE = "Publishing | Penova Publishers";
 const DESC =
   "Full-service and assisted publishing for authors who keep 100% of their rights. From manuscript to bookshelf with print, ebook, and audio distribution handled end to end.";
 
@@ -109,7 +109,7 @@ const publishingProcess = [
 const whyPublishWith = [
   {
     title: "You Keep Everything",
-    body: "Rights, ISBN, royalties, finished files—all yours. Penova is a services partner, never a rights-acquiring publisher. The contract is plain English, not legalese.",
+    body: "Rights, ISBN, royalties and finished files are all yours. Penova is a services partner, never a rights-acquiring publisher. The contract is plain English, not legalese.",
     icon: Shield,
   },
   {
@@ -124,7 +124,7 @@ const whyPublishWith = [
   },
   {
     title: "Read First, Advise Second",
-    body: "Every publishing engagement opens with a senior editor telling you honestly what your manuscript needs—even if it's less editing than you thought.",
+    body: "Every publishing engagement opens with a senior editor telling you honestly what your manuscript needs, even if it is less editing than you thought.",
     icon: Zap,
   },
 ];
@@ -151,15 +151,15 @@ const publishingBenefits = [
 const publishingFaqs = [
   {
     q: "How long does the publishing process take?",
-    a: "Most projects take 4-6 months from acceptance to print availability. Rushed timelines are possible but not recommended—great books deserve time. We'll discuss your deadline at the assessment stage.",
+    a: "Most projects take 4 to 6 months from acceptance to print availability. Rushed timelines are possible but not recommended. Great books deserve time. We'll discuss your deadline at the assessment stage.",
   },
   {
     q: "What if my manuscript needs heavy editing?",
-    a: "That's what the assessment is for. We'll be honest about the scope and time required. Heavy developmental editing is a service we provide—it simply means more editing passes and a longer timeline. The cost is in the scope you approve upfront.",
+    a: "That's what the assessment is for. We'll be honest about the scope and time required. Heavy developmental editing is a service we provide, and it simply means more editing passes and a longer timeline. The cost is in the scope you approve upfront.",
   },
   {
     q: "How much does publishing cost?",
-    a: "Full-service publishing ranges from $4,500–$8,500 depending on manuscript length, cover complexity, and distribution scope. We discuss your needs, build a scope, then quote a fixed price. Assisted publishing is typically $2,000–$5,000 depending on which services you select. Request a quote to see exact pricing for your project.",
+    a: "Full-service publishing ranges from $4,500 to $8,500 depending on manuscript length, cover complexity, and distribution scope. We discuss your needs, build a scope, then quote a fixed price. Assisted publishing is typically $2,000 to $5,000 depending on which services you select. Request a quote to see exact pricing for your project.",
   },
   {
     q: "Who owns the ISBN and cover design?",
@@ -167,7 +167,7 @@ const publishingFaqs = [
   },
   {
     q: "What about audio books?",
-    a: "We coordinate audio production—recording, editing, and distribution to Audible and other platforms. Most authors work with professional narrators; we handle the logistics and quality checks. Audio is an optional add-on.",
+    a: "We coordinate audio production, including recording, editing and distribution to Audible and other platforms. Most authors work with professional narrators, and we handle the logistics and quality checks. Audio is an optional add-on.",
   },
   {
     q: "Can I publish if I have a traditional publishing deal for a different book?",
@@ -179,7 +179,7 @@ const publishingFaqs = [
   },
   {
     q: "What if I'm not ready to publish yet?",
-    a: "Many authors come to us with manuscripts that need editing first. We offer standalone editing services, and authors often return to publish after their manuscript is polished. No pressure to publish—only when it's right.",
+    a: "Many authors come to us with manuscripts that need editing first. We offer standalone editing services, and authors often return to publish after their manuscript is polished. There is no pressure to publish until it is right.",
   },
 ];
 
@@ -280,9 +280,9 @@ function Page() {
           aria-hidden="true"
           className="ken-burns absolute inset-0 -z-20 h-full w-full object-cover object-center"
         />
-        {/* Lighter overlay — lets the photo breathe */}
+        {/* Lighter overlay lets the photo breathe */}
         <div className="absolute inset-0 -z-10 bg-navy-deep/50" />
-        {/* Left-side gradient — text column stays crisp, right side opens up */}
+        {/* Left-side gradient keeps the text column crisp while opening up the right side */}
         <div className="absolute inset-0 -z-10 bg-gradient-to-r from-navy-deep/90 via-navy-deep/55 to-navy-deep/15" />
         {/* Subtle radial glow */}
         <div className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-gold/10 via-transparent to-transparent pointer-events-none" />
@@ -292,7 +292,7 @@ function Page() {
 
         <div className="mx-auto grid max-w-7xl items-center gap-16 px-5 py-20 lg:grid-cols-[1.15fr_0.85fr] lg:px-8 lg:py-28">
           <div>
-            {/* Badge — slide in from left */}
+            {/* Badge slides in from the left */}
             <span
               className="glass-navy inline-flex items-center gap-2 rounded-full px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.2em] text-gold"
               style={{
@@ -304,7 +304,7 @@ function Page() {
               Full-service &amp; assisted publishing
             </span>
 
-            {/* Headline — words fade up with stagger */}
+            {/* Headline words fade up in sequence */}
             <h1 className="mt-8 text-5xl leading-[1.02] text-on-navy md:text-6xl lg:text-[4.6rem]">
               <span
                 className="block"
@@ -336,7 +336,7 @@ function Page() {
               </span>
             </h1>
 
-            {/* Rule — fade up */}
+            {/* Rule fades in */}
             <span
               className="rule-gold mt-8"
               style={{
@@ -345,7 +345,7 @@ function Page() {
               }}
             />
 
-            {/* Body copy — fade up */}
+            {/* Body copy fades in */}
             <p
               className="mt-8 max-w-xl text-lg leading-relaxed text-on-navy-muted"
               style={{
@@ -356,7 +356,7 @@ function Page() {
               Print, ebook, and audio distribution handled end to end. You keep everything. We handle the craft.
             </p>
 
-            {/* CTA buttons — fade up last */}
+            {/* CTA buttons fade in last */}
             <div
               className="mt-10 flex flex-wrap gap-3"
               style={{
@@ -415,7 +415,7 @@ function Page() {
             <SectionHeading
               eyebrow="Why your book deserves publishing"
               title="A book is an asset. For life."
-              intro="Unlike a blog post or social media, a published book compounds—selling years from now, building authority, opening doors. Publishing is a strategic choice that pays forward."
+              intro="Unlike a blog post or social media, a published book compounds over time, selling years from now, building authority and opening doors. Publishing is a strategic choice that pays forward."
             />
             <ul className="mt-12 space-y-6">
               {publishingBenefits.map((benefit, i) => (
@@ -585,7 +585,7 @@ function Page() {
       {/* -------- CTA Banner -------- */}
       <CtaBanner
         title="Your manuscript. Our expertise. One fixed price."
-        body="Tell us about your book and where it stands today. A senior editor will read it, send back an honest assessment, outline a route to publication, and quote you a fixed price—no obligation."
+        body="Tell us about your book and where it stands today. A senior editor will read it, send back an honest assessment, outline a route to publication and quote you a fixed price, with no obligation."
         primary="Request a Free Assessment"
       />
     </SiteLayout>

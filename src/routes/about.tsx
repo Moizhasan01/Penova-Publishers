@@ -5,7 +5,7 @@ import { Reveal } from "@/components/reveal";
 import { CtaBanner, PageHero, SectionHeading, TrustBadges } from "@/components/sections";
 import spines from "@/assets/book-spines.jpg";
 
-const TITLE = "About Penova Publishers — A Boutique Publishing House";
+const TITLE = "About Penova Publishers | A Boutique Publishing House";
 const DESC =
   "Meet the editors, designers and strategists behind Penova Publishers, and the values that shape how we treat every author's manuscript.";
 
@@ -75,7 +75,7 @@ function About() {
       <PageHero
         eyebrow="About Penova Publishers"
         title="We keep the light on for writers."
-        intro="Penova Publishers exists because too many good books never reach a reader — not for lack of talent, but for lack of a steady hand between manuscript and market."
+        intro="Penova Publishers exists because too many good books never reach a reader, not for lack of talent but for lack of a steady hand between manuscript and market."
         image={spines}
         imageAlt="Gold-lettered book spines on a dark shelf"
       />
@@ -88,7 +88,7 @@ function About() {
           <Reveal delay={100} className="space-y-5 text-base leading-relaxed text-muted-foreground">
             <p>
               In 2011 our founder, Eleanor Voss, was a commissioning editor who had to turn down a
-              memoir she loved. It was not weak writing — it was an unshaped middle and a house that
+              memoir she loved. It was not weak writing. It was an unshaped middle and a house that
               had no room on its list. She wrote three pages of notes she was not paid to write and
               posted them to the author.
             </p>
@@ -105,7 +105,7 @@ function About() {
             <p>
               We are deliberately small. We take on a limited number of titles each quarter so that
               no author is ever handed to a coordinator and forgotten. That is the whole business
-              model — attention, kept.
+              model, with attention kept.
             </p>
           </Reveal>
         </div>
