@@ -11,7 +11,7 @@ import {
   Zap,
   Shield,
 } from "lucide-react";
-import { SiteLayout } from "@/components/site-layout";
+import { openBrevoChat, SiteLayout } from "@/components/site-layout";
 import { Reveal } from "@/components/reveal";
 import {
   PageHero,
@@ -372,9 +372,7 @@ function Page() {
               </Link>
               <button
                 type="button"
-                onClick={() => {
-                  (window as Window & { BrevoConversations?: (command: string) => void }).BrevoConversations?.("open");
-                }}
+                onClick={openBrevoChat}
                 className="inline-flex items-center gap-2 rounded-sm border border-on-navy/30 px-8 py-4 text-sm font-semibold text-on-navy transition-all duration-500 hover:-translate-y-0.5 hover:border-gold hover:text-gold"
               >
                 Chat With Us

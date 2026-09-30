@@ -4,6 +4,31 @@ import { SiteFooter } from "@/components/site-footer";
 import { StickySideIcons } from "@/components/sticky-side-icons";
 import { useEffect } from "react";
 
+export function openBrevoChat() {
+  const brevo = (window as Window & {
+    BrevoConversations?: (command: string) => void;
+  }).BrevoConversations;
+
+  if (brevo) {
+    brevo("open");
+    return;
+  }
+
+  let attempts = 0;
+  const retry = window.setInterval(() => {
+    const conversation = (window as Window & {
+      BrevoConversations?: (command: string) => void;
+    }).BrevoConversations;
+
+    if (conversation) {
+      window.clearInterval(retry);
+      conversation("open");
+    } else if (++attempts >= 20) {
+      window.clearInterval(retry);
+    }
+  }, 100);
+}
+
 export function SiteLayout({ children }: { children: ReactNode }) {
   useEffect(() => {
     // Initialize Brevo Conversations
