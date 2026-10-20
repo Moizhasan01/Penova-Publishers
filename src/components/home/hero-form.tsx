@@ -3,8 +3,12 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Label } from "@/components/ui/label";
+import { LeadFormFeedback } from "@/components/forms/lead-form-feedback";
+import { useLeadForm } from "@/hooks/use-lead-form";
 
 export function HeroForm() {
+  const { handleSubmit, isSubmitting, status } = useLeadForm("homepage enquiry");
+
   return (
     <div className="relative mx-auto w-full max-w-[460px]">
       <div className="absolute -inset-1 rounded-2xl bg-gradient-to-br from-gold/40 via-gold/10 to-transparent opacity-50 blur-xl" />
@@ -18,26 +22,26 @@ export function HeroForm() {
           </p>
         </div>
 
-        <form className="space-y-3.5" onSubmit={(e) => e.preventDefault()}>
+        <form className="space-y-3.5" onSubmit={handleSubmit}>
           <div className="grid gap-3 sm:grid-cols-2">
             <div className="space-y-1.5">
               <Label htmlFor="name" className="text-[0.65rem] font-semibold uppercase tracking-[0.14em] text-navy-deep/60">Name</Label>
-              <Input id="name" placeholder="Your full name" className="h-10 border-navy-deep/15 bg-cream/35 text-sm text-navy-deep placeholder:text-navy-deep/35 focus-visible:border-gold focus-visible:ring-gold/30" />
+              <Input id="name" name="name" required placeholder="Your full name" className="h-10 border-navy-deep/15 bg-cream/35 text-sm text-navy-deep placeholder:text-navy-deep/35 focus-visible:border-gold focus-visible:ring-gold/30" />
             </div>
             <div className="space-y-1.5">
               <Label htmlFor="email" className="text-[0.65rem] font-semibold uppercase tracking-[0.14em] text-navy-deep/60">Email Address</Label>
-              <Input id="email" type="email" placeholder="name@example.com" className="h-10 border-navy-deep/15 bg-cream/35 text-sm text-navy-deep placeholder:text-navy-deep/35 focus-visible:border-gold focus-visible:ring-gold/30" />
+              <Input id="email" name="email" type="email" required placeholder="name@example.com" className="h-10 border-navy-deep/15 bg-cream/35 text-sm text-navy-deep placeholder:text-navy-deep/35 focus-visible:border-gold focus-visible:ring-gold/30" />
             </div>
           </div>
 
           <div className="space-y-1.5">
             <Label htmlFor="phone" className="text-[0.65rem] font-semibold uppercase tracking-[0.14em] text-navy-deep/60">Contact Number</Label>
-            <Input id="phone" type="tel" placeholder="+1 (555) 000-0000" className="h-10 border-navy-deep/15 bg-cream/35 text-sm text-navy-deep placeholder:text-navy-deep/35 focus-visible:border-gold focus-visible:ring-gold/30" />
+            <Input id="phone" name="phone" type="tel" placeholder="+1 (555) 000-0000" className="h-10 border-navy-deep/15 bg-cream/35 text-sm text-navy-deep placeholder:text-navy-deep/35 focus-visible:border-gold focus-visible:ring-gold/30" />
           </div>
 
           <div className="space-y-1.5">
             <Label htmlFor="service" className="text-[0.65rem] font-semibold uppercase tracking-[0.14em] text-navy-deep/60">I am interested in</Label>
-            <select id="service" name="service" defaultValue="" className="flex h-10 w-full rounded-md border border-navy-deep/15 bg-cream/35 px-3 text-sm text-navy-deep shadow-sm outline-none focus-visible:border-gold focus-visible:ring-1 focus-visible:ring-gold/30">
+            <select id="service" name="service" defaultValue="" required className="flex h-10 w-full rounded-md border border-navy-deep/15 bg-cream/35 px-3 text-sm text-navy-deep shadow-sm outline-none focus-visible:border-gold focus-visible:ring-1 focus-visible:ring-gold/30">
               <option value="" disabled>Select a service...</option>
               <option>Book Publishing</option>
               <option>Book Marketing</option>
@@ -50,19 +54,20 @@ export function HeroForm() {
 
           <div className="space-y-1.5">
             <Label htmlFor="info" className="text-[0.65rem] font-semibold uppercase tracking-[0.14em] text-navy-deep/60">About Your Book</Label>
-            <Textarea id="info" placeholder="Share some details about your manuscript or idea..." className="min-h-[76px] resize-none border-navy-deep/15 bg-cream/35 text-sm leading-relaxed text-navy-deep placeholder:text-navy-deep/35 focus-visible:border-gold focus-visible:ring-gold/30" />
+            <Textarea id="info" name="message" placeholder="Share some details about your manuscript or idea..." className="min-h-[76px] resize-none border-navy-deep/15 bg-cream/35 text-sm leading-relaxed text-navy-deep placeholder:text-navy-deep/35 focus-visible:border-gold focus-visible:ring-gold/30" />
           </div>
 
           <div className="flex items-start gap-2.5 pt-1">
-            <Checkbox id="consent" className="mt-0.5 border-navy-deep/25 data-[state=checked]:bg-gold data-[state=checked]:text-navy-deep" />
+            <Checkbox id="consent" name="consent" className="mt-0.5 border-navy-deep/25 data-[state=checked]:bg-gold data-[state=checked]:text-navy-deep" />
             <label htmlFor="consent" className="text-[0.65rem] font-medium leading-relaxed text-navy-deep/55">
               By checking this box, you consent to receive communications from Penova Publishers. By submitting, you agree to our <a href="#" className="font-semibold text-gold hover:underline">Privacy Choices</a>.
             </label>
           </div>
 
-          <Button type="submit" className="mt-2 h-11 w-full bg-navy-deep text-sm font-semibold uppercase tracking-[0.18em] text-on-navy shadow-lg transition-all duration-300 hover:-translate-y-0.5 hover:bg-navy hover:shadow-xl">
+          <Button type="submit" disabled={isSubmitting} className="mt-2 h-11 w-full bg-navy-deep text-sm font-semibold uppercase tracking-[0.18em] text-on-navy shadow-lg transition-all duration-300 hover:-translate-y-0.5 hover:bg-navy hover:shadow-xl">
             Request a conversation
           </Button>
+          <LeadFormFeedback status={status} />
         </form>
       </div>
     </div>

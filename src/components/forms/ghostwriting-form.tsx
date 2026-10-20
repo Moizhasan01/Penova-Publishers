@@ -1,13 +1,14 @@
-import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Label } from "@/components/ui/label";
+import { LeadFormFeedback } from "@/components/forms/lead-form-feedback";
+import { useLeadForm } from "@/hooks/use-lead-form";
 
 // Dark-glass form sits on top of the navy hero.
 export function GhostwritingForm() {
-  const [hoveredField, setHoveredField] = useState<string | null>(null);
+  const { handleSubmit, isSubmitting, status } = useLeadForm("ghostwriting enquiry");
 
   return (
     <div className="relative w-full max-w-[560px] mx-auto">
@@ -30,12 +31,14 @@ export function GhostwritingForm() {
           </p>
         </div>
 
-        <form className="space-y-4" onSubmit={(e) => e.preventDefault()}>
+        <form className="space-y-4" onSubmit={handleSubmit}>
           <div className="grid gap-4 sm:grid-cols-2">
             <div className="space-y-1.5">
               <Label htmlFor="ghost-name" className="text-[0.68rem] font-semibold uppercase tracking-widest text-on-navy-muted">Full Name</Label>
               <Input
                 id="ghost-name"
+                name="name"
+                required
                 placeholder="Your name"
                 className="h-11 rounded-xl border-white/10 bg-white/8 px-4 text-sm text-on-navy placeholder:text-on-navy/30 shadow-none backdrop-blur-sm transition-all hover:border-white/20 focus-visible:border-gold/60 focus-visible:bg-white/10 focus-visible:ring-2 focus-visible:ring-gold/20"
               />
@@ -44,7 +47,9 @@ export function GhostwritingForm() {
               <Label htmlFor="ghost-email" className="text-[0.68rem] font-semibold uppercase tracking-widest text-on-navy-muted">Email Address</Label>
               <Input
                 id="ghost-email"
+                name="email"
                 type="email"
+                required
                 placeholder="you@example.com"
                 className="h-11 rounded-xl border-white/10 bg-white/8 px-4 text-sm text-on-navy placeholder:text-on-navy/30 shadow-none backdrop-blur-sm transition-all hover:border-white/20 focus-visible:border-gold/60 focus-visible:bg-white/10 focus-visible:ring-2 focus-visible:ring-gold/20"
               />
@@ -55,6 +60,7 @@ export function GhostwritingForm() {
             <Label htmlFor="ghost-booktype" className="text-[0.68rem] font-semibold uppercase tracking-widest text-on-navy-muted">Book Type</Label>
             <Input
               id="ghost-booktype"
+              name="bookType"
               placeholder="e.g., Memoir, Business, Fiction, Self-Help..."
               className="h-11 rounded-xl border-white/10 bg-white/8 px-4 text-sm text-on-navy placeholder:text-on-navy/30 shadow-none backdrop-blur-sm transition-all hover:border-white/20 focus-visible:border-gold/60 focus-visible:bg-white/10 focus-visible:ring-2 focus-visible:ring-gold/20"
             />
@@ -64,6 +70,7 @@ export function GhostwritingForm() {
             <Label htmlFor="ghost-story" className="text-[0.68rem] font-semibold uppercase tracking-widest text-on-navy-muted">Your Story</Label>
             <Textarea
               id="ghost-story"
+              name="message"
               placeholder="What experience or insight are you sharing with the world?"
               className="min-h-[90px] resize-none rounded-xl border-white/10 bg-white/8 p-4 text-sm text-on-navy placeholder:text-on-navy/30 shadow-none backdrop-blur-sm transition-all hover:border-white/20 focus-visible:border-gold/60 focus-visible:bg-white/10 focus-visible:ring-2 focus-visible:ring-gold/20"
             />
@@ -72,6 +79,7 @@ export function GhostwritingForm() {
           <div className="flex items-start gap-3 pt-1">
             <Checkbox
               id="ghost-consent"
+              name="consent"
               className="mt-0.5 h-4 w-4 rounded border-white/20 data-[state=checked]:bg-gold data-[state=checked]:border-gold data-[state=checked]:text-navy-deep"
             />
             <label htmlFor="ghost-consent" className="text-xs leading-relaxed text-on-navy-muted">
@@ -81,10 +89,12 @@ export function GhostwritingForm() {
 
           <Button
             type="submit"
+            disabled={isSubmitting}
             className="h-12 w-full rounded-xl bg-gradient-to-r from-gold to-gold-light text-[0.8rem] font-semibold uppercase tracking-widest text-navy-deep shadow-[0_4px_24px_rgba(212,175,55,0.3)] transition-all duration-300 hover:scale-[1.02] hover:shadow-[0_6px_32px_rgba(212,175,55,0.45)] hover:brightness-105"
           >
             Start the Conversation
           </Button>
+          <LeadFormFeedback status={status} />
         </form>
       </div>
     </div>

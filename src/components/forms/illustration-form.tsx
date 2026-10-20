@@ -1,12 +1,13 @@
-import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Label } from "@/components/ui/label";
+import { LeadFormFeedback } from "@/components/forms/lead-form-feedback";
+import { useLeadForm } from "@/hooks/use-lead-form";
 
 export function IllustrationForm() {
-  const [hoveredField, setHoveredField] = useState<string | null>(null);
+  const { handleSubmit, isSubmitting, status } = useLeadForm("illustration enquiry");
 
   return (
     <div className="relative mx-auto w-full max-w-[480px]">
@@ -28,12 +29,14 @@ export function IllustrationForm() {
           </p>
         </div>
 
-        <form className="space-y-4" onSubmit={(e) => e.preventDefault()}>
+        <form className="space-y-4" onSubmit={handleSubmit}>
           <div className="grid gap-4 sm:grid-cols-2">
             <div className="space-y-2">
               <Label htmlFor="ill-name" className="text-[0.7rem] font-semibold uppercase tracking-widest text-navy-deep/70">Your Name</Label>
               <Input 
                 id="ill-name" 
+                name="name"
+                required
                 placeholder="Full name" 
                 className="h-11 rounded-xl border-white/40 bg-white/60 px-4 text-sm font-medium text-navy-deep shadow-sm backdrop-blur-sm transition-all placeholder:text-navy-deep/30 hover:bg-white/80 focus-visible:border-purple-400 focus-visible:bg-white focus-visible:ring-4 focus-visible:ring-purple-400/10"
               />
@@ -42,7 +45,9 @@ export function IllustrationForm() {
               <Label htmlFor="ill-email" className="text-[0.7rem] font-semibold uppercase tracking-widest text-navy-deep/70">Email Address</Label>
               <Input 
                 id="ill-email" 
+                name="email"
                 type="email" 
+                required
                 placeholder="you@example.com" 
                 className="h-11 rounded-xl border-white/40 bg-white/60 px-4 text-sm font-medium text-navy-deep shadow-sm backdrop-blur-sm transition-all placeholder:text-navy-deep/30 hover:bg-white/80 focus-visible:border-purple-400 focus-visible:bg-white focus-visible:ring-4 focus-visible:ring-purple-400/10"
               />
@@ -53,6 +58,7 @@ export function IllustrationForm() {
             <Label htmlFor="ill-style" className="text-[0.7rem] font-semibold uppercase tracking-widest text-navy-deep/70">Art Style Preference</Label>
             <Input 
               id="ill-style" 
+              name="style"
               placeholder="e.g., Watercolor, Digital, Character..." 
               className="h-11 rounded-xl border-white/40 bg-white/60 px-4 text-sm font-medium text-navy-deep shadow-sm backdrop-blur-sm transition-all placeholder:text-navy-deep/30 hover:bg-white/80 focus-visible:border-purple-400 focus-visible:bg-white focus-visible:ring-4 focus-visible:ring-purple-400/10"
             />
@@ -62,6 +68,7 @@ export function IllustrationForm() {
             <Label htmlFor="ill-description" className="text-[0.7rem] font-semibold uppercase tracking-widest text-navy-deep/70">Describe Your Project</Label>
             <Textarea 
               id="ill-description" 
+              name="message"
               placeholder="What's the vision? Any references?" 
               className="min-h-[100px] resize-none rounded-xl border-white/40 bg-white/60 p-4 text-sm font-medium leading-relaxed text-navy-deep shadow-sm backdrop-blur-sm transition-all placeholder:text-navy-deep/30 hover:bg-white/80 focus-visible:border-purple-400 focus-visible:bg-white focus-visible:ring-4 focus-visible:ring-purple-400/10"
             />
@@ -70,6 +77,7 @@ export function IllustrationForm() {
           <div className="flex items-start gap-3 pt-2">
             <Checkbox 
               id="ill-consent" 
+              name="consent"
               className="mt-1 border-purple-300/60 data-[state=checked]:bg-gradient-to-r data-[state=checked]:from-purple-500 data-[state=checked]:to-pink-500 data-[state=checked]:text-white data-[state=checked]:border-transparent h-5 w-5 rounded-md" 
             />
             <label htmlFor="ill-consent" className="text-xs leading-relaxed text-muted-foreground">
@@ -79,10 +87,12 @@ export function IllustrationForm() {
 
           <Button 
             type="submit" 
+            disabled={isSubmitting}
             className="mt-4 h-12 w-full rounded-xl bg-gradient-to-r from-purple-600 to-pink-500 text-[0.8rem] font-semibold uppercase tracking-widest text-white shadow-lg shadow-purple-500/25 transition-all duration-300 hover:scale-[1.02] hover:shadow-xl hover:shadow-purple-500/30 hover:brightness-105"
           >
             Share Your Vision
           </Button>
+          <LeadFormFeedback status={status} />
         </form>
       </div>
     </div>

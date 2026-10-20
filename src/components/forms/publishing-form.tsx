@@ -1,12 +1,13 @@
-import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Label } from "@/components/ui/label";
+import { LeadFormFeedback } from "@/components/forms/lead-form-feedback";
+import { useLeadForm } from "@/hooks/use-lead-form";
 
 export function PublishingForm() {
-  const [stage, setStage] = useState("");
+  const { handleSubmit, isSubmitting, status } = useLeadForm("publishing enquiry");
 
   return (
     <div className="relative w-full max-w-[560px] mx-auto">
@@ -33,12 +34,14 @@ export function PublishingForm() {
           </p>
         </div>
 
-        <form className="space-y-4" onSubmit={(e) => e.preventDefault()}>
+        <form className="space-y-4" onSubmit={handleSubmit}>
           <div className="grid gap-4 sm:grid-cols-2">
             <div className="space-y-1.5">
               <Label htmlFor="pub-name" className="text-[0.68rem] font-semibold uppercase tracking-widest text-navy-deep/60">Full Name</Label>
               <Input
                 id="pub-name"
+                name="name"
+                required
                 placeholder="Your name"
                 className="h-11 rounded-xl border-navy-deep/15 bg-cream/45 px-4 text-sm text-navy-deep placeholder:text-navy-deep/35 shadow-none transition-all hover:border-navy-deep/25 focus-visible:border-gold/60 focus-visible:bg-cream focus-visible:ring-2 focus-visible:ring-gold/20"
               />
@@ -47,7 +50,9 @@ export function PublishingForm() {
               <Label htmlFor="pub-email" className="text-[0.68rem] font-semibold uppercase tracking-widest text-navy-deep/60">Email Address</Label>
               <Input
                 id="pub-email"
+                name="email"
                 type="email"
+                required
                 placeholder="you@example.com"
                 className="h-11 rounded-xl border-navy-deep/15 bg-cream/45 px-4 text-sm text-navy-deep placeholder:text-navy-deep/35 shadow-none transition-all hover:border-navy-deep/25 focus-visible:border-gold/60 focus-visible:bg-cream focus-visible:ring-2 focus-visible:ring-gold/20"
               />
@@ -58,8 +63,9 @@ export function PublishingForm() {
             <Label htmlFor="pub-stage" className="text-[0.68rem] font-semibold uppercase tracking-widest text-navy-deep/60">Where are you now?</Label>
             <select
               id="pub-stage"
-              value={stage}
-              onChange={(e) => setStage(e.target.value)}
+              name="stage"
+              defaultValue=""
+              required
               className="h-11 w-full rounded-xl border border-navy-deep/15 bg-cream/45 px-4 text-sm text-navy-deep shadow-none transition-all hover:border-navy-deep/25 focus:border-gold/60 focus:outline-none focus:ring-2 focus:ring-gold/20"
             >
               <option value="" disabled>Select your stage...</option>
@@ -75,6 +81,7 @@ export function PublishingForm() {
             <Label htmlFor="pub-goals" className="text-[0.68rem] font-semibold uppercase tracking-widest text-navy-deep/60">Publishing Goals</Label>
             <Textarea
               id="pub-goals"
+              name="message"
               placeholder="Print, ebook, distribution, timeline, budget and any other priorities..."
               className="min-h-[90px] resize-none rounded-xl border-navy-deep/15 bg-cream/45 p-4 text-sm text-navy-deep placeholder:text-navy-deep/35 shadow-none transition-all hover:border-navy-deep/25 focus-visible:border-gold/60 focus-visible:bg-cream focus-visible:ring-2 focus-visible:ring-gold/20"
             />
@@ -83,6 +90,7 @@ export function PublishingForm() {
           <div className="flex items-start gap-3 pt-1">
             <Checkbox
               id="pub-consent"
+              name="consent"
               className="mt-0.5 h-4 w-4 rounded border-navy-deep/25 data-[state=checked]:bg-gold data-[state=checked]:border-gold data-[state=checked]:text-navy-deep"
             />
             <label htmlFor="pub-consent" className="text-xs leading-relaxed text-muted-foreground">
@@ -92,10 +100,12 @@ export function PublishingForm() {
 
           <Button
             type="submit"
+            disabled={isSubmitting}
             className="h-12 w-full rounded-xl bg-gradient-to-r from-gold to-gold-light text-[0.8rem] font-semibold uppercase tracking-widest text-navy-deep shadow-[0_4px_24px_rgba(212,175,55,0.3)] transition-all duration-300 hover:scale-[1.02] hover:shadow-[0_6px_32px_rgba(212,175,55,0.45)] hover:brightness-105"
           >
             Begin Your Journey
           </Button>
+          <LeadFormFeedback status={status} />
         </form>
       </div>
     </div>

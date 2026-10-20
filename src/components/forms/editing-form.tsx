@@ -1,13 +1,14 @@
-import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Label } from "@/components/ui/label";
+import { LeadFormFeedback } from "@/components/forms/lead-form-feedback";
+import { useLeadForm } from "@/hooks/use-lead-form";
 
 // Light form surface for clear contrast against the navy hero
 export function EditingForm() {
-  const [type, setType] = useState("");
+  const { handleSubmit, isSubmitting, status } = useLeadForm("editing enquiry");
 
   return (
     <div className="relative w-full max-w-[560px] mx-auto">
@@ -31,7 +32,7 @@ export function EditingForm() {
           </p>
         </div>
 
-        <form className="space-y-4" onSubmit={(e) => e.preventDefault()}>
+        <form className="space-y-4" onSubmit={handleSubmit}>
           <div className="grid gap-4 sm:grid-cols-2">
             <div className="space-y-1.5">
               <Label
@@ -42,6 +43,8 @@ export function EditingForm() {
               </Label>
               <Input
                 id="edit-name"
+                name="name"
+                required
                 placeholder="Your name"
                 className="h-11 rounded-xl border-navy-deep/15 bg-cream/35 px-4 text-sm text-navy-deep placeholder:text-navy-deep/35 shadow-none transition-all hover:border-navy-deep/25 focus-visible:border-gold/60 focus-visible:bg-white focus-visible:ring-2 focus-visible:ring-gold/20"
               />
@@ -55,7 +58,9 @@ export function EditingForm() {
               </Label>
               <Input
                 id="edit-email"
+                name="email"
                 type="email"
+                required
                 placeholder="you@example.com"
                 className="h-11 rounded-xl border-navy-deep/15 bg-cream/35 px-4 text-sm text-navy-deep placeholder:text-navy-deep/35 shadow-none transition-all hover:border-navy-deep/25 focus-visible:border-gold/60 focus-visible:bg-white focus-visible:ring-2 focus-visible:ring-gold/20"
               />
@@ -71,8 +76,9 @@ export function EditingForm() {
             </Label>
             <select
               id="edit-type"
-              value={type}
-              onChange={(e) => setType(e.target.value)}
+              name="service"
+              defaultValue=""
+              required
               className="h-11 w-full rounded-xl border border-navy-deep/15 bg-cream/35 px-4 text-sm text-navy-deep shadow-none transition-all hover:border-navy-deep/25 focus:border-gold/60 focus:outline-none focus:ring-2 focus:ring-gold/20"
             >
               <option value="" disabled className="bg-white text-navy-deep">
@@ -102,6 +108,7 @@ export function EditingForm() {
             </Label>
             <Textarea
               id="edit-notes"
+              name="message"
               placeholder="Genre, page count, current stage, and specific goals..."
               className="min-h-[90px] resize-none rounded-xl border-navy-deep/15 bg-cream/35 p-4 text-sm text-navy-deep placeholder:text-navy-deep/35 shadow-none transition-all hover:border-navy-deep/25 focus-visible:border-gold/60 focus-visible:bg-white focus-visible:ring-2 focus-visible:ring-gold/20"
             />
@@ -110,6 +117,7 @@ export function EditingForm() {
           <div className="flex items-start gap-3 pt-1">
             <Checkbox
               id="edit-consent"
+              name="consent"
               className="mt-0.5 h-4 w-4 rounded border-navy-deep/25 data-[state=checked]:border-gold data-[state=checked]:bg-gold data-[state=checked]:text-navy-deep"
             />
             <label htmlFor="edit-consent" className="text-xs leading-relaxed text-navy-deep/60">
@@ -123,10 +131,12 @@ export function EditingForm() {
 
           <Button
             type="submit"
+            disabled={isSubmitting}
             className="h-12 w-full rounded-xl bg-gradient-to-r from-gold to-gold-light text-[0.8rem] font-semibold uppercase tracking-widest text-navy-deep shadow-[0_4px_24px_rgba(212,175,55,0.3)] transition-all duration-300 hover:scale-[1.02] hover:shadow-[0_6px_32px_rgba(212,175,55,0.45)] hover:brightness-105"
           >
             Request Assessment
           </Button>
+          <LeadFormFeedback status={status} />
         </form>
       </div>
     </div>

@@ -14,7 +14,7 @@ const socialLinks = [
   },
   {
     icon: FaInstagram,
-    href: "https://www.instagram.com/",
+    href: "https://www.instagram.com/penova.publishers/",
     label: "Instagram",
     ariaLabel: "Visit our Instagram page",
   },

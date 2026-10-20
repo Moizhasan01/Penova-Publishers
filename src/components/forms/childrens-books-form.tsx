@@ -1,12 +1,13 @@
-import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Label } from "@/components/ui/label";
+import { LeadFormFeedback } from "@/components/forms/lead-form-feedback";
+import { useLeadForm } from "@/hooks/use-lead-form";
 
 export function ChildrensBooksForm() {
-  const [hoveredField, setHoveredField] = useState<string | null>(null);
+  const { handleSubmit, isSubmitting, status } = useLeadForm("children's books enquiry");
 
   return (
     <div className="relative mx-auto w-full max-w-[480px]">
@@ -28,12 +29,14 @@ export function ChildrensBooksForm() {
           </p>
         </div>
 
-        <form className="space-y-4" onSubmit={(e) => e.preventDefault()}>
+        <form className="space-y-4" onSubmit={handleSubmit}>
           <div className="grid gap-4 sm:grid-cols-2">
             <div className="space-y-2">
               <Label htmlFor="kids-name" className="text-[0.7rem] font-semibold uppercase tracking-widest text-navy-deep/70">Your Name</Label>
               <Input 
                 id="kids-name" 
+                name="name"
+                required
                 placeholder="Full name" 
                 className="h-11 rounded-xl border-white/40 bg-white/60 px-4 text-sm font-medium text-navy-deep shadow-sm backdrop-blur-sm transition-all placeholder:text-navy-deep/30 hover:bg-white/80 focus-visible:border-orange-300 focus-visible:bg-white focus-visible:ring-4 focus-visible:ring-orange-300/10"
               />
@@ -42,7 +45,9 @@ export function ChildrensBooksForm() {
               <Label htmlFor="kids-email" className="text-[0.7rem] font-semibold uppercase tracking-widest text-navy-deep/70">Email Address</Label>
               <Input 
                 id="kids-email" 
+                name="email"
                 type="email" 
+                required
                 placeholder="you@example.com" 
                 className="h-11 rounded-xl border-white/40 bg-white/60 px-4 text-sm font-medium text-navy-deep shadow-sm backdrop-blur-sm transition-all placeholder:text-navy-deep/30 hover:bg-white/80 focus-visible:border-orange-300 focus-visible:bg-white focus-visible:ring-4 focus-visible:ring-orange-300/10"
               />
@@ -53,6 +58,7 @@ export function ChildrensBooksForm() {
             <Label htmlFor="kids-age" className="text-[0.7rem] font-semibold uppercase tracking-widest text-navy-deep/70">Target Age Group</Label>
             <Input 
               id="kids-age" 
+              name="ageGroup"
               placeholder="e.g., Ages 3-5, Early Readers..." 
               className="h-11 rounded-xl border-white/40 bg-white/60 px-4 text-sm font-medium text-navy-deep shadow-sm backdrop-blur-sm transition-all placeholder:text-navy-deep/30 hover:bg-white/80 focus-visible:border-orange-300 focus-visible:bg-white focus-visible:ring-4 focus-visible:ring-orange-300/10"
             />
@@ -62,6 +68,7 @@ export function ChildrensBooksForm() {
             <Label htmlFor="kids-story" className="text-[0.7rem] font-semibold uppercase tracking-widest text-navy-deep/70">Story Idea</Label>
             <Textarea 
               id="kids-story" 
+              name="message"
               placeholder="What makes your story special?" 
               className="min-h-[100px] resize-none rounded-xl border-white/40 bg-white/60 p-4 text-sm font-medium leading-relaxed text-navy-deep shadow-sm backdrop-blur-sm transition-all placeholder:text-navy-deep/30 hover:bg-white/80 focus-visible:border-orange-300 focus-visible:bg-white focus-visible:ring-4 focus-visible:ring-orange-300/10"
             />
@@ -70,6 +77,7 @@ export function ChildrensBooksForm() {
           <div className="flex items-start gap-3 pt-2">
             <Checkbox 
               id="kids-consent" 
+              name="consent"
               className="mt-1 border-orange-300/60 data-[state=checked]:bg-gradient-to-r data-[state=checked]:from-orange-400 data-[state=checked]:to-pink-400 data-[state=checked]:text-white data-[state=checked]:border-transparent h-5 w-5 rounded-md" 
             />
             <label htmlFor="kids-consent" className="text-xs leading-relaxed text-muted-foreground">
@@ -79,10 +87,12 @@ export function ChildrensBooksForm() {
 
           <Button 
             type="submit" 
+            disabled={isSubmitting}
             className="mt-4 h-12 w-full rounded-xl bg-gradient-to-r from-orange-400 to-pink-400 text-[0.8rem] font-semibold uppercase tracking-widest text-white shadow-lg shadow-orange-400/25 transition-all duration-300 hover:scale-[1.02] hover:shadow-xl hover:shadow-orange-400/30 hover:brightness-105"
           >
             Start Your Book
           </Button>
+          <LeadFormFeedback status={status} />
         </form>
       </div>
     </div>

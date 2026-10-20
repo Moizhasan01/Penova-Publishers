@@ -1,9 +1,10 @@
-import { useState, type FormEvent } from "react";
 import { createFileRoute } from "@tanstack/react-router";
 import { ArrowRight, Check, Mail, ShieldCheck } from "lucide-react";
 import { SiteLayout } from "@/components/site-layout";
+import { LeadFormFeedback } from "@/components/forms/lead-form-feedback";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
+import { useLeadForm } from "@/hooks/use-lead-form";
 
 const TITLE = "Get a Free Quote | Penova Publishers";
 const DESC =
@@ -22,12 +23,8 @@ export const Route = createFileRoute("/signup")({
 });
 
 function SignupPage() {
-  const [submitted, setSubmitted] = useState(false);
-
-  function handleSubmit(event: FormEvent<HTMLFormElement>) {
-    event.preventDefault();
-    setSubmitted(true);
-  }
+  const { handleSubmit, isSubmitting, status } = useLeadForm("quote request");
+  const submitted = status === "success";
 
   return (
     <SiteLayout>
@@ -70,7 +67,8 @@ function SignupPage() {
                     <select name="service" required defaultValue="" className="flex h-10 w-full rounded-md border border-input bg-transparent px-3 text-sm shadow-sm outline-none focus-visible:ring-1 focus-visible:ring-ring"><option value="" disabled>Select a service...</option><option>Book Publishing</option><option>Book Marketing</option><option>Audiobook Production</option><option>Book Illustration</option><option>Children&apos;s Book</option><option>Not sure yet, advise me</option></select>
                   </label>
                   <label className="space-y-2 text-sm font-semibold text-navy-deep">Tell us about your book <span className="font-normal text-muted-foreground">(optional)</span><Textarea name="message" rows={5} placeholder="What are you making, and where are you in the process?" /></label>
-                  <button type="submit" className="group inline-flex w-full items-center justify-center gap-3 rounded-md bg-navy-deep px-6 py-4 text-sm font-semibold uppercase tracking-[0.16em] text-on-navy transition-all hover:bg-navy hover:shadow-[0_10px_30px_rgba(15,27,45,0.2)]">Send my enquiry <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" /></button>
+                  <button type="submit" disabled={isSubmitting} className="group inline-flex w-full items-center justify-center gap-3 rounded-md bg-navy-deep px-6 py-4 text-sm font-semibold uppercase tracking-[0.16em] text-on-navy transition-all hover:bg-navy hover:shadow-[0_10px_30px_rgba(15,27,45,0.2)] disabled:cursor-not-allowed disabled:opacity-60">{isSubmitting ? "Sending..." : "Send my enquiry"} <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" /></button>
+                  <LeadFormFeedback status={status} />
                   <p className="flex items-center justify-center gap-2 text-center text-xs text-muted-foreground"><Mail className="h-3.5 w-3.5" /> We&apos;ll only use your details to reply to this enquiry.</p>
                 </form>
               )}

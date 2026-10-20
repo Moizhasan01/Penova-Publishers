@@ -4,7 +4,8 @@ import { FaFacebookF, FaInstagram, FaLinkedinIn, FaPinterestP, FaTiktok } from "
 import { CONTACT } from "@/lib/contactInfo";
 import { BrandLogo } from "@/components/brand-logo";
 import { SERVICES } from "@/lib/site-data";
-import { toast } from "sonner";
+import { LeadFormFeedback } from "@/components/forms/lead-form-feedback";
+import { useLeadForm } from "@/hooks/use-lead-form";
 
 const socials = [
   {
@@ -14,7 +15,7 @@ const socials = [
   },
   {
     label: "Instagram",
-    href: "https://www.instagram.com/",
+    href: "https://www.instagram.com/penova.publishers/",
     Icon: FaInstagram,
   },
   {
@@ -35,6 +36,8 @@ const socials = [
 ];
 
 export function SiteFooter() {
+  const { handleSubmit, isSubmitting, status } = useLeadForm("newsletter signup");
+
   return (
     <footer className="surface-navy">
       <div className="mx-auto max-w-7xl px-5 py-16 lg:px-8 lg:py-20">
@@ -135,31 +138,33 @@ export function SiteFooter() {
               </li>
             </ul>
 
-            <form
-              className="mt-7"
-              onSubmit={(e) => {
-                e.preventDefault();
-                e.currentTarget.reset();
-                toast.success("You're on the list. Welcome aboard.");
-              }}
-            >
+            <form className="mt-7" onSubmit={handleSubmit}>
               <label htmlFor="newsletter" className="text-xs text-on-navy-muted">
                 Monthly letter for authors
               </label>
               <div className="mt-2 flex">
                 <input
                   id="newsletter"
+                  name="email"
                   type="email"
                   required
+                  disabled={isSubmitting}
                   placeholder="your@email.com"
                   className="w-full rounded-l-sm border border-on-navy/20 bg-on-navy/5 px-3 py-2.5 text-sm text-on-navy placeholder:text-on-navy-muted/60 focus:border-gold focus:outline-none"
                 />
                 <button
                   type="submit"
-                  className="rounded-r-sm bg-gold px-4 text-sm font-semibold text-navy-deep transition-colors hover:bg-gold-light"
+                  disabled={isSubmitting}
+                  className="rounded-r-sm bg-gold px-4 text-sm font-semibold text-navy-deep transition-colors hover:bg-gold-light disabled:cursor-not-allowed disabled:opacity-60"
                 >
-                  Join
+                  {isSubmitting ? "Sending..." : "Join"}
                 </button>
+              </div>
+              <div className="mt-2">
+                <LeadFormFeedback
+                  status={status}
+                  successMessage="Thanks for your interest. Your subscription request was sent."
+                />
               </div>
             </form>
           </div>
