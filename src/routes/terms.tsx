@@ -61,7 +61,7 @@ function Page() {
           <section>
             <h2 className="font-serif text-3xl text-navy-deep">Contact</h2>
             <p className="mt-4">
-              Questions about these terms can be sent to hello@penovapublishers.com.
+              Questions about these terms can be sent to info@penovapublishers.com.
             </p>
           </section>
         </div>

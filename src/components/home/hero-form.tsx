@@ -30,7 +30,7 @@ export function HeroForm() {
             </div>
             <div className="space-y-1.5">
               <Label htmlFor="email" className="text-[0.65rem] font-semibold uppercase tracking-[0.14em] text-navy-deep/60">Email Address</Label>
-              <Input id="email" name="email" type="email" required placeholder="name@example.com" className="h-10 border-navy-deep/15 bg-cream/35 text-sm text-navy-deep placeholder:text-navy-deep/35 focus-visible:border-gold focus-visible:ring-gold/30" />
+              <Input id="email" name="email" type="email" required placeholder="Your email address" className="h-10 border-navy-deep/15 bg-cream/35 text-sm text-navy-deep placeholder:text-navy-deep/35 focus-visible:border-gold focus-visible:ring-gold/30" />
             </div>
           </div>
 

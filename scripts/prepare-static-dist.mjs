@@ -5,6 +5,8 @@ const distDir = path.resolve("dist");
 const clientDir = path.join(distDir, "client");
 const serverDir = path.join(distDir, "server");
 
+await rm(path.join(distDir, "assets"), { recursive: true, force: true });
+
 for (const entry of await readdir(clientDir, { withFileTypes: true })) {
   await cp(path.join(clientDir, entry.name), path.join(distDir, entry.name), {
     recursive: true,

@@ -62,13 +62,13 @@ function Page() {
             <p className="mt-4">
               You can ask us to access, correct, or delete personal information we hold about you,
               or to stop sending marketing communications. Visit our Privacy Choices page or email
-              hello@penovapublishers.com to make a request.
+              info@penovapublishers.com to make a request.
             </p>
           </section>
           <section>
             <h2 className="font-serif text-3xl text-navy-deep">Contact</h2>
             <p className="mt-4">
-              Questions about this policy can be sent to hello@penovapublishers.com.
+              Questions about this policy can be sent to info@penovapublishers.com.
             </p>
           </section>
         </div>

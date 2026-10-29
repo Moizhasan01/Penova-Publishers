@@ -29,7 +29,7 @@ function Page() {
             <h2 className="font-serif text-3xl text-navy-deep">Marketing messages</h2>
             <p className="mt-4">
               If you receive an email from us, you can unsubscribe using the link in the message.
-              You may also email hello@penovapublishers.com with the subject &quot;Unsubscribe&quot; and
+              You may also email info@penovapublishers.com with the subject &quot;Unsubscribe&quot; and
               we will update your preference.
             </p>
           </section>
@@ -52,7 +52,7 @@ function Page() {
           <section>
             <h2 className="font-serif text-3xl text-navy-deep">Contact us</h2>
             <p className="mt-4">
-              Send privacy requests or questions to hello@penovapublishers.com. We will review and
+              Send privacy requests or questions to info@penovapublishers.com. We will review and
               respond to requests within a reasonable period.
             </p>
           </section>

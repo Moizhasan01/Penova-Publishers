@@ -128,8 +128,8 @@ export function SiteFooter() {
               </li>
               <li className="flex items-start gap-3">
                 <Mail className="mt-0.5 h-4 w-4 shrink-0 text-gold" />
-                <a href="mailto:hello@penovapublishers.com" className="hover:text-gold">
-                  hello@penovapublishers.com
+                <a href={`mailto:${CONTACT.email}`} className="hover:text-gold">
+                  {CONTACT.email}
                 </a>
               </li>
               <li className="flex items-start gap-3">
@@ -149,7 +149,7 @@ export function SiteFooter() {
                   type="email"
                   required
                   disabled={isSubmitting}
-                  placeholder="your@email.com"
+                  placeholder="Email address"
                   className="w-full rounded-l-sm border border-on-navy/20 bg-on-navy/5 px-3 py-2.5 text-sm text-on-navy placeholder:text-on-navy-muted/60 focus:border-gold focus:outline-none"
                 />
                 <button

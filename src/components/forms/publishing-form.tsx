@@ -53,7 +53,7 @@ export function PublishingForm() {
                 name="email"
                 type="email"
                 required
-                placeholder="you@example.com"
+                placeholder="Your email address"
                 className="h-11 rounded-xl border-navy-deep/15 bg-cream/45 px-4 text-sm text-navy-deep placeholder:text-navy-deep/35 shadow-none transition-all hover:border-navy-deep/25 focus-visible:border-gold/60 focus-visible:bg-cream focus-visible:ring-2 focus-visible:ring-gold/20"
               />
             </div>

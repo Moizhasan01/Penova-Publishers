@@ -48,7 +48,7 @@ export function ChildrensBooksForm() {
                 name="email"
                 type="email" 
                 required
-                placeholder="you@example.com" 
+                placeholder="Your email address"
                 className="h-11 rounded-xl border-white/40 bg-white/60 px-4 text-sm font-medium text-navy-deep shadow-sm backdrop-blur-sm transition-all placeholder:text-navy-deep/30 hover:bg-white/80 focus-visible:border-orange-300 focus-visible:bg-white focus-visible:ring-4 focus-visible:ring-orange-300/10"
               />
             </div>

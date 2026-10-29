@@ -60,7 +60,7 @@ function SignupPage() {
                     <label className="space-y-2 text-sm font-semibold text-navy-deep">Last name<Input name="lastName" required autoComplete="family-name" placeholder="Your last name" /></label>
                   </div>
                   <div className="grid gap-5 sm:grid-cols-2">
-                    <label className="space-y-2 text-sm font-semibold text-navy-deep">Email address<Input type="email" name="email" required autoComplete="email" placeholder="you@example.com" /></label>
+                    <label className="space-y-2 text-sm font-semibold text-navy-deep">Email address<Input type="email" name="email" required autoComplete="email" placeholder="Your email address" /></label>
                     <label className="space-y-2 text-sm font-semibold text-navy-deep">Phone number <span className="font-normal text-muted-foreground">(optional)</span><Input type="tel" name="phone" autoComplete="tel" placeholder="+1 555 000 0000" /></label>
                   </div>
                   <label className="space-y-2 text-sm font-semibold text-navy-deep">I am interested in

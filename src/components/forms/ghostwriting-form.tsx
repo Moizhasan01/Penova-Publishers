@@ -50,7 +50,7 @@ export function GhostwritingForm() {
                 name="email"
                 type="email"
                 required
-                placeholder="you@example.com"
+                placeholder="Your email address"
                 className="h-11 rounded-xl border-white/10 bg-white/8 px-4 text-sm text-on-navy placeholder:text-on-navy/30 shadow-none backdrop-blur-sm transition-all hover:border-white/20 focus-visible:border-gold/60 focus-visible:bg-white/10 focus-visible:ring-2 focus-visible:ring-gold/20"
               />
             </div>
