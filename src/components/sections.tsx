@@ -106,7 +106,13 @@ export function HeroReviewRatings({
       )}
       aria-label="Reader review ratings"
     >
-      <div className="flex items-center gap-3">
+      <a
+        href="https://www.google.com/search?q=penova+publishers&sca_esv=e1e629a7a800150e&sxsrf=AKL5yDiHbDRGiXxIy8Y9VdbXFMc6bfk10w%3A1793398265551&ei=-RXlatCYIc2ekdUPj6SS8QM&biw=1920&bih=953&uact=5&oq=penova+publishers&gs_lp=Egxnd3Mtd2l6LXNlcnAiEXBlbm92YSBwdWJsaXNoZXJzMgQQIxgnMgsQABiABBiKBRiGAzILEAAYgAQYigUYhgMyCxAAGIAEGIoFGIYDMgsQABiABBiKBRiGAzIIEAAYgAQYogQyBRAAGO8FMgUQABjvBUjuClCcA1jSCXAAeAKQAQCYAfYCoAGoCqoBBzAuMS4yLjKwAQC4AQPIAQD4AQGYAgSgAvEHwgIEEAAYR5gDAOIDBBgAIF3iAwQYACBe4gMEGAAgX-IDBBgAIGDiAwQYACBh4gMEGAAgYuIDBRIBMSBAiAYBkAYIkgcJMS4wLjEuMS4xoAf3HrIHBzItMS4xLjG4B9YHwgcDMy00yAc2gAgB&sclient=gws-wiz-serp"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="View Penova Publishers on Google"
+        className="flex items-center gap-3 rounded-sm transition-opacity hover:opacity-80"
+      >
         <span
           aria-hidden="true"
           className="bg-[conic-gradient(from_20deg,#4285f4,#34a853,#fbbc05,#ea4335,#4285f4)] bg-clip-text text-[1.75rem] font-bold leading-none text-transparent"
@@ -117,7 +123,7 @@ export function HeroReviewRatings({
           <p className={cn("text-sm font-semibold", onLight ? "text-navy-deep" : "text-on-navy")}>Google</p>
           <p className="mt-0.5 text-[0.62rem] uppercase tracking-[0.14em]">4.8 rating</p>
         </div>
-      </div>
+      </a>
       <span className={cn("h-8 w-px", onLight ? "bg-navy-deep/15" : "bg-on-navy/15")} aria-hidden="true" />
       <a
         href="https://www.trustpilot.com/review/penovapublishers.com"
