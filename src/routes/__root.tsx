@@ -7,12 +7,19 @@ import {
   HeadContent,
   Scripts,
   type ErrorComponentProps,
+  useLocation,
 } from "@tanstack/react-router";
-import { useEffect, type ReactNode } from "react";
+import { useEffect, useRef, type ReactNode } from "react";
 
 import appCss from "../styles.css?url";
 import favicon from "../assets/favvvv.png";
 import { reportLovableError } from "../lib/lovable-error-reporting";
+
+declare global {
+  interface Window {
+    fbq?: (...args: unknown[]) => void;
+  }
+}
 
 function NotFoundComponent() {
   return (
@@ -138,8 +145,33 @@ function RootShell({ children }: { children: ReactNode }) {
             `,
           }}
         />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              !function(f,b,e,v,n,t,s)
+              {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+              n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+              if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+              n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;
+              s=b.getElementsByTagName(e)[0];
+              s.parentNode.insertBefore(t,s)}(window, document,'script',
+              'https://connect.facebook.net/en_US/fbevents.js');
+              fbq('init', '1164838759603700');
+              fbq('track', 'PageView');
+            `,
+          }}
+        />
       </head>
       <body>
+        <noscript>
+          <img
+            height="1"
+            width="1"
+            style={{ display: "none" }}
+            src="https://www.facebook.com/tr?id=1164838759603700&amp;ev=PageView&amp;noscript=1"
+            alt=""
+          />
+        </noscript>
         {children}
         <Scripts />
       </body>
@@ -149,6 +181,14 @@ function RootShell({ children }: { children: ReactNode }) {
 
 function RootComponent() {
   const { queryClient } = Route.useRouteContext();
+  const location = useLocation();
+  const previousLocation = useRef(location.href);
+
+  useEffect(() => {
+    if (location.href === previousLocation.current) return;
+    previousLocation.current = location.href;
+    window.fbq?.("track", "PageView");
+  }, [location.href]);
 
   return (
     <QueryClientProvider client={queryClient}>
