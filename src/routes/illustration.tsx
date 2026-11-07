@@ -5,6 +5,7 @@ import { SiteLayout } from "@/components/site-layout";
 import { Reveal } from "@/components/reveal";
 import { CtaBanner, FaqAccordion, HeroReviewRatings } from "@/components/sections";
 import { IllustrationForm } from "@/components/forms/illustration-form";
+import { CONTACT } from "@/lib/contactInfo";
 import marketingHeroImg from "@/assets/marketing hero.jpg";
 import bookCoversImg from "@/assets/illustration-book-covers.jpg";
 import processImg from "@/assets/illustration-process.jpg";
@@ -1631,7 +1632,7 @@ function Page() {
               <Link to="/signup" className="illus-cta-white">
                 Start Your Illustration Project <ArrowRight size={18} />
               </Link>
-              <a href="tel:+1234567890" className="illus-cta-outline">
+              <a href={`tel:${CONTACT.phone.replace(/\s+/g, "")}`} className="illus-cta-outline">
                 Call Us
               </a>
             </div>

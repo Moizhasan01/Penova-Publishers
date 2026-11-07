@@ -122,7 +122,7 @@ export function SiteFooter() {
             <ul className="mt-5 space-y-3 text-sm text-on-navy-muted">
               <li className="flex items-start gap-3">
                 <Phone className="mt-0.5 h-4 w-4 shrink-0 text-gold" />
-                <a href="tel:+1${CONTACT.phone.replace(/\s+/g, '')}" className="hover:text-gold">
+                <a href={`tel:${CONTACT.phone.replace(/\s+/g, "")}`} className="hover:text-gold">
                   {CONTACT.phone}
                 </a>
               </li>
