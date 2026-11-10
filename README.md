@@ -1,8 +1,6 @@
-# Beacon Publisher Launch
+# Penova Publishers
 
-Beacon Publisher — Lovable Build Prompt
-
-Copy everything below (from "PROJECT BRIEF" onward) and paste it into Lovable as your first prompt.
+Penova Publishers — a premium, ultra-professional multi-page marketing website for a publishing services company offering Publishing, Ghostwriting, Editing, Marketing, Children's Books, and Illustration services.
 
 PROJECT BRIEF
 
@@ -95,18 +93,6 @@ Confident, warm, editorial, and trustworthy — written for aspiring and establi
 DELIVERABLE EXPECTATION
 
 A cohesive, production-ready, multi-page website (11 pages total as listed) with consistent branding, working internal navigation between all pages, and a polished, premium feel suitable for client presentation — matching or exceeding the professionalism of parkerpublishers.com and alpacaauthors.com.
-
-This project was built with [Lovable](https://lovable.dev).
-
-**Live app**: https://beacon-glow-scribe.lovable.app
-
-## Build with Lovable
-
-Continue developing this project in the [Lovable editor](https://lovable.dev/projects/ad18de8c-3298-433b-8660-17d2f453d985).
-
-- **Ship faster**: describe what you want to build and Lovable handles the code.
-- **Stay in sync**: every change made in Lovable is committed straight to this repository.
-- **Full ownership**: this code is yours. Push to `main` on GitHub and your changes sync back into Lovable, ready for your next prompt.
 
 ## Development
 
