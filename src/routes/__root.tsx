@@ -12,8 +12,6 @@ import {
 import { useEffect, useRef, type ReactNode } from "react";
 
 import appCss from "../styles.css?url";
-import favicon from "../assets/favvvv.png";
-
 
 declare global {
   interface Window {
@@ -106,7 +104,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         rel: "stylesheet",
         href: "https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Manrope:wght@400;500;600;700&display=swap",
       },
-      { rel: "icon", href: favicon, type: "image/png" },
+   { rel: "icon", href: "/favicon.ico", type: "image/x-icon" },
     ],
   }),
   shellComponent: RootShell,
