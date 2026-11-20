@@ -104,3 +104,7 @@ cd <repository-name>
 npm i
 npm run dev
 ```
+
+For static hosting, run `npm run build` and deploy the generated `dist/` directory.
+It includes SPA fallback rules for Netlify and Cloudflare Pages (`_redirects`) and
+Apache (`.htaccess`), so nested routes load when opened directly.
