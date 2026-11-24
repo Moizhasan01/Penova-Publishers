@@ -61,7 +61,7 @@ function Page() {
           <section>
             <h2 className="font-serif text-3xl text-navy-deep">Text messaging</h2>
             <p className="mt-4">
-              You agree to receive information messages (appointment reminders, account notifications, etc.) from Penova Publisher LLC. Message frequency varies. Message and data rates may apply. For help, reply HELP or email us at ellie@penovapublishers.com. You can opt out at any time by replying STOP.
+              You agree to receive information messages (appointment reminders, account notifications, etc.) from Penova Publisher LLC. Message frequency varies. Message and data rates may apply. For help, reply HELP or email us at <a href="mailto:ellie@penovapublishers.com" className="underline">ellie@penovapublishers.com</a>. You can opt out at any time by replying STOP.
             </p>
           </section>
           <section>
