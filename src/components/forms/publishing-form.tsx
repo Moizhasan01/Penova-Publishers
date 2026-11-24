@@ -94,7 +94,7 @@ export function PublishingForm() {
               className="mt-0.5 h-4 w-4 rounded border-navy-deep/25 data-[state=checked]:bg-gold data-[state=checked]:border-gold data-[state=checked]:text-navy-deep"
             />
             <label htmlFor="pub-consent" className="text-xs leading-relaxed text-muted-foreground">
-              I agree to receive communications from Penova Publishers and accept the <a href="#" className="text-gold hover:underline">Privacy Policy</a>.
+              I agree to receive communications from Penova Publishers and accept the <a href="https://penovapublishers.com/privacypolicy" className="text-gold hover:underline">Privacy Policy</a>.
             </label>
           </div>
 

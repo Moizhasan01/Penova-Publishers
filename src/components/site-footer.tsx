@@ -94,25 +94,28 @@ export function SiteFooter() {
                 </Link>
               </li>
               <li>
-                <Link
-                  to="/privacy"
+                <a
+                  href="https://penovapublishers.com/privacypolicy"
                   className="text-on-navy-muted transition-colors hover:text-gold"
                 >
                   Privacy Policy
-                </Link>
+                </a>
               </li>
               <li>
-                <Link to="/terms" className="text-on-navy-muted transition-colors hover:text-gold">
+                <a
+                  href="https://penovapublishers.com/termsandconditions"
+                  className="text-on-navy-muted transition-colors hover:text-gold"
+                >
                   Terms &amp; Conditions
-                </Link>
+                </a>
               </li>
               <li>
-                <Link
-                  to="/privacy-choices"
+                <a
+                  href="https://penovapublishers.com/privacy-choices"
                   className="text-on-navy-muted transition-colors hover:text-gold"
                 >
                   Privacy Choices
-                </Link>
+                </a>
               </li>
             </ul>
           </div>

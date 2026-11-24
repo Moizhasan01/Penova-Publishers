@@ -60,7 +60,7 @@ export function HeroForm() {
           <div className="flex items-start gap-2.5 pt-1">
             <Checkbox id="consent" name="consent" className="mt-0.5 border-navy-deep/25 data-[state=checked]:bg-gold data-[state=checked]:text-navy-deep" />
             <label htmlFor="consent" className="text-[0.65rem] font-medium leading-relaxed text-navy-deep/55">
-              By checking this box, you consent to receive communications from Penova Publishers. By submitting, you agree to our <a href="#" className="font-semibold text-gold hover:underline">Privacy Choices</a>.
+              By checking this box, you consent to receive communications from Penova Publishers. By submitting, you agree to our <a href="https://penovapublishers.com/privacy-choices" className="font-semibold text-gold hover:underline">Privacy Choices</a>.
             </label>
           </div>
 

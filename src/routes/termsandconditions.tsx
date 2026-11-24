@@ -4,7 +4,7 @@ import { SiteLayout } from "@/components/site-layout";
 
 const TITLE = "Terms & Conditions | Penova Publishers";
 
-export const Route = createFileRoute("/terms")({
+export const Route = createFileRoute("/termsandconditions")({
   head: () => ({
     meta: [
       { title: TITLE },
@@ -61,10 +61,7 @@ function Page() {
           <section>
             <h2 className="font-serif text-3xl text-navy-deep">Text messaging</h2>
             <p className="mt-4">
-              You agree to receive information messages (appointment reminders, account notifications,
-              etc.) from Penova Publisher LLC. Message frequency varies. Message and data rates may
-              apply. For help, reply HELP or email us at ellie@penovapublishers.com. You can opt out
-              at any time by replying STOP.
+              You agree to receive information messages (appointment reminders, account notifications, etc.) from Penova Publisher LLC. Message frequency varies. Message and data rates may apply. For help, reply HELP or email us at ellie@penovapublishers.com. You can opt out at any time by replying STOP.
             </p>
           </section>
           <section>

@@ -6,7 +6,7 @@ const TITLE = "Privacy Policy | Penova Publishers";
 const DESC =
   "Penova Publishers: boutique publishing, ghostwriting, editing, marketing, children's books and illustration for authors who keep 100% of their rights.";
 
-export const Route = createFileRoute("/privacy")({
+export const Route = createFileRoute("/privacypolicy")({
   head: () => ({
     meta: [
       { title: TITLE },

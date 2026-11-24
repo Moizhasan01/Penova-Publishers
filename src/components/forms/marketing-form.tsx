@@ -108,7 +108,7 @@ export function MarketingForm() {
             />
             <label htmlFor="mkt-consent" className="text-xs leading-relaxed text-navy-deep/60">
               I agree to receive communications from Penova Publishers and accept the{" "}
-              <a href="#" className="text-gold hover:underline">
+              <a href="https://penovapublishers.com/privacypolicy" className="text-gold hover:underline">
                 Privacy Policy
               </a>
               .

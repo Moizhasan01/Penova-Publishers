@@ -81,7 +81,7 @@ export function IllustrationForm() {
               className="mt-1 border-purple-300/60 data-[state=checked]:bg-gradient-to-r data-[state=checked]:from-purple-500 data-[state=checked]:to-pink-500 data-[state=checked]:text-white data-[state=checked]:border-transparent h-5 w-5 rounded-md" 
             />
             <label htmlFor="ill-consent" className="text-xs leading-relaxed text-muted-foreground">
-              I consent to receive communications from Penova Publishers. I agree to the <a href="#" className="font-semibold text-purple-600/80 hover:text-purple-500 transition-colors">Privacy Choices</a>.
+              I consent to receive communications from Penova Publishers. I agree to the <a href="https://penovapublishers.com/privacy-choices" className="font-semibold text-purple-600/80 hover:text-purple-500 transition-colors">Privacy Choices</a>.
             </label>
           </div>
 

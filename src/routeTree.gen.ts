@@ -17,11 +17,11 @@ import { Route as EditingRouteImport } from './routes/editing'
 import { Route as GhostwritingRouteImport } from './routes/ghostwriting'
 import { Route as IllustrationRouteImport } from './routes/illustration'
 import { Route as MarketingRouteImport } from './routes/marketing'
-import { Route as PrivacyRouteImport } from './routes/privacy'
 import { Route as PrivacyChoicesRouteImport } from './routes/privacy-choices'
+import { Route as PrivacypolicyRouteImport } from './routes/privacypolicy'
 import { Route as PublishingRouteImport } from './routes/publishing'
 import { Route as SignupRouteImport } from './routes/signup'
-import { Route as TermsRouteImport } from './routes/terms'
+import { Route as TermsandconditionsRouteImport } from './routes/termsandconditions'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -63,14 +63,14 @@ const MarketingRoute = MarketingRouteImport.update({
   path: '/marketing',
   getParentRoute: () => rootRouteImport,
 } as any)
-const PrivacyRoute = PrivacyRouteImport.update({
-  id: '/privacy',
-  path: '/privacy',
-  getParentRoute: () => rootRouteImport,
-} as any)
 const PrivacyChoicesRoute = PrivacyChoicesRouteImport.update({
   id: '/privacy-choices',
   path: '/privacy-choices',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PrivacypolicyRoute = PrivacypolicyRouteImport.update({
+  id: '/privacypolicy',
+  path: '/privacypolicy',
   getParentRoute: () => rootRouteImport,
 } as any)
 const PublishingRoute = PublishingRouteImport.update({
@@ -83,9 +83,9 @@ const SignupRoute = SignupRouteImport.update({
   path: '/signup',
   getParentRoute: () => rootRouteImport,
 } as any)
-const TermsRoute = TermsRouteImport.update({
-  id: '/terms',
-  path: '/terms',
+const TermsandconditionsRoute = TermsandconditionsRouteImport.update({
+  id: '/termsandconditions',
+  path: '/termsandconditions',
   getParentRoute: () => rootRouteImport,
 } as any)
 
@@ -98,11 +98,11 @@ export interface FileRoutesByFullPath {
   '/ghostwriting': typeof GhostwritingRoute
   '/illustration': typeof IllustrationRoute
   '/marketing': typeof MarketingRoute
-  '/privacy': typeof PrivacyRoute
   '/privacy-choices': typeof PrivacyChoicesRoute
+  '/privacypolicy': typeof PrivacypolicyRoute
   '/publishing': typeof PublishingRoute
   '/signup': typeof SignupRoute
-  '/terms': typeof TermsRoute
+  '/termsandconditions': typeof TermsandconditionsRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -113,11 +113,11 @@ export interface FileRoutesByTo {
   '/ghostwriting': typeof GhostwritingRoute
   '/illustration': typeof IllustrationRoute
   '/marketing': typeof MarketingRoute
-  '/privacy': typeof PrivacyRoute
   '/privacy-choices': typeof PrivacyChoicesRoute
+  '/privacypolicy': typeof PrivacypolicyRoute
   '/publishing': typeof PublishingRoute
   '/signup': typeof SignupRoute
-  '/terms': typeof TermsRoute
+  '/termsandconditions': typeof TermsandconditionsRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -129,11 +129,11 @@ export interface FileRoutesById {
   '/ghostwriting': typeof GhostwritingRoute
   '/illustration': typeof IllustrationRoute
   '/marketing': typeof MarketingRoute
-  '/privacy': typeof PrivacyRoute
   '/privacy-choices': typeof PrivacyChoicesRoute
+  '/privacypolicy': typeof PrivacypolicyRoute
   '/publishing': typeof PublishingRoute
   '/signup': typeof SignupRoute
-  '/terms': typeof TermsRoute
+  '/termsandconditions': typeof TermsandconditionsRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -146,11 +146,11 @@ export interface FileRouteTypes {
     | '/ghostwriting'
     | '/illustration'
     | '/marketing'
-    | '/privacy'
     | '/privacy-choices'
+    | '/privacypolicy'
     | '/publishing'
     | '/signup'
-    | '/terms'
+    | '/termsandconditions'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -161,11 +161,11 @@ export interface FileRouteTypes {
     | '/ghostwriting'
     | '/illustration'
     | '/marketing'
-    | '/privacy'
     | '/privacy-choices'
+    | '/privacypolicy'
     | '/publishing'
     | '/signup'
-    | '/terms'
+    | '/termsandconditions'
   id:
     | '__root__'
     | '/'
@@ -176,11 +176,11 @@ export interface FileRouteTypes {
     | '/ghostwriting'
     | '/illustration'
     | '/marketing'
-    | '/privacy'
     | '/privacy-choices'
+    | '/privacypolicy'
     | '/publishing'
     | '/signup'
-    | '/terms'
+    | '/termsandconditions'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -192,11 +192,11 @@ export interface RootRouteChildren {
   GhostwritingRoute: typeof GhostwritingRoute
   IllustrationRoute: typeof IllustrationRoute
   MarketingRoute: typeof MarketingRoute
-  PrivacyRoute: typeof PrivacyRoute
   PrivacyChoicesRoute: typeof PrivacyChoicesRoute
+  PrivacypolicyRoute: typeof PrivacypolicyRoute
   PublishingRoute: typeof PublishingRoute
   SignupRoute: typeof SignupRoute
-  TermsRoute: typeof TermsRoute
+  TermsandconditionsRoute: typeof TermsandconditionsRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -257,18 +257,18 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof MarketingRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/privacy': {
-      id: '/privacy'
-      path: '/privacy'
-      fullPath: '/privacy'
-      preLoaderRoute: typeof PrivacyRouteImport
-      parentRoute: typeof rootRouteImport
-    }
     '/privacy-choices': {
       id: '/privacy-choices'
       path: '/privacy-choices'
       fullPath: '/privacy-choices'
       preLoaderRoute: typeof PrivacyChoicesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/privacypolicy': {
+      id: '/privacypolicy'
+      path: '/privacypolicy'
+      fullPath: '/privacypolicy'
+      preLoaderRoute: typeof PrivacypolicyRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/publishing': {
@@ -285,11 +285,11 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof SignupRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/terms': {
-      id: '/terms'
-      path: '/terms'
-      fullPath: '/terms'
-      preLoaderRoute: typeof TermsRouteImport
+    '/termsandconditions': {
+      id: '/termsandconditions'
+      path: '/termsandconditions'
+      fullPath: '/termsandconditions'
+      preLoaderRoute: typeof TermsandconditionsRouteImport
       parentRoute: typeof rootRouteImport
     }
   }
@@ -304,11 +304,11 @@ const rootRouteChildren: RootRouteChildren = {
   GhostwritingRoute: GhostwritingRoute,
   IllustrationRoute: IllustrationRoute,
   MarketingRoute: MarketingRoute,
-  PrivacyRoute: PrivacyRoute,
   PrivacyChoicesRoute: PrivacyChoicesRoute,
+  PrivacypolicyRoute: PrivacypolicyRoute,
   PublishingRoute: PublishingRoute,
   SignupRoute: SignupRoute,
-  TermsRoute: TermsRoute,
+  TermsandconditionsRoute: TermsandconditionsRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
