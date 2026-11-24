@@ -20,4 +20,32 @@ await rm(path.join(distDir, "index.html"), { force: true });
 await rename(path.join(distDir, "_shell.html"), path.join(distDir, "index.html"));
 
 await mkdir(distDir, { recursive: true });
+
+const staticRoutes = [
+  "about",
+  "childrens-books",
+  "contact",
+  "editing",
+  "ghostwriting",
+  "illustration",
+  "marketing",
+  "privacy",
+  "privacy-choices",
+  "publishing",
+  "signup",
+  "terms",
+];
+
+for (const route of staticRoutes) {
+  const routeDir = path.join(distDir, route);
+  await mkdir(routeDir, { recursive: true });
+  await cp(path.join(distDir, "index.html"), path.join(routeDir, "index.html"), {
+    force: true,
+  });
+}
+
+await cp(path.join(distDir, "index.html"), path.join(distDir, "404.html"), {
+  force: true,
+});
+
 console.log("Static deployment files prepared in dist/");
