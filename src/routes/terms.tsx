@@ -59,6 +59,15 @@ function Page() {
             </p>
           </section>
           <section>
+            <h2 className="font-serif text-3xl text-navy-deep">Text messaging</h2>
+            <p className="mt-4">
+              You agree to receive information messages (appointment reminders, account notifications,
+              etc.) from Penova Publisher LLC. Message frequency varies. Message and data rates may
+              apply. For help, reply HELP or email us at ellie@penovapublishers.com. You can opt out
+              at any time by replying STOP.
+            </p>
+          </section>
+          <section>
             <h2 className="font-serif text-3xl text-navy-deep">Contact</h2>
             <p className="mt-4">
               Questions about these terms can be sent to info@penovapublishers.com.

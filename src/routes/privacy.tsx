@@ -56,6 +56,11 @@ function Page() {
               We use reasonable administrative and technical safeguards, but no online transmission
               can be guaranteed completely secure.
             </p>
+            <p className="mt-4">
+              Mobile opt-in information, including phone numbers and SMS consent, will not be shared
+              with third parties for marketing purposes. We use it only to send the messages you
+              requested.
+            </p>
           </section>
           <section>
             <h2 className="font-serif text-3xl text-navy-deep">Your choices</h2>
