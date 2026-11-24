@@ -57,9 +57,7 @@ function Page() {
               can be guaranteed completely secure.
             </p>
             <p className="mt-4">
-              Mobile opt-in information, including phone numbers and SMS consent, will not be shared
-              with third parties for marketing purposes. We use it only to send the messages you
-              requested.
+              Mobile opt-in information, including phone numbers and SMS consent, will not be shared with third parties for marketing purposes. We use it only to send the messages you asked for.
             </p>
           </section>
           <section>
